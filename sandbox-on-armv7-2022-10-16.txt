@@ -1,0 +1,2516 @@
+(env) uboot@633ffb52da05:~/u-boot$ make tests
+./test/run
+
+sandbox: +make O=/home/uboot/u-boot/build-sandbox -s sandbox_defconfig
++make O=/home/uboot/u-boot/build-sandbox -s -j8
+/home/uboot/u-boot/build-sandbox/../scripts/dtc/pylibfdt/setup.py:21: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  from distutils.core import setup, Extension
+In file included from ../include/linux/bitops.h:22,
+                 from ../include/log.h:15,
+                 from ../include/linux/printk.h:4,
+                 from ../include/common.h:20,
+                 from ../test/dm/k210_pll.c:6:
+../test/dm/k210_pll.c: In function ‘dm_test_k210_pll_calc_config’:
+../include/linux/bitops.h:11:38: warning: left shift count >= width of type [-Wshift-count-overflow]
+   11 | #define BIT(nr)                 (1UL << (nr))
+      |                                      ^~
+../include/linux/kernel.h:162:37: note: in definition of macro ‘abs’
+  162 |                         long __x = (x);                         \
+      |                                     ^
+../test/dm/k210_pll.c:36:54: note: in expansion of macro ‘BIT’
+   36 |                                 error = abs((error - BIT(32))) >> 16;
+      |                                                      ^~~
+../include/linux/bitops.h:11:38: warning: left shift count >= width of type [-Wshift-count-overflow]
+   11 | #define BIT(nr)                 (1UL << (nr))
+      |                                      ^~
+../include/linux/kernel.h:165:36: note: in definition of macro ‘abs’
+  165 |                         int __x = (x);                          \
+      |                                    ^
+../test/dm/k210_pll.c:36:54: note: in expansion of macro ‘BIT’
+   36 |                                 error = abs((error - BIT(32))) >> 16;
+      |                                                      ^~~
+/usr/bin/ld: warning: keep-syms-lto.o uses 2-byte wchar_t yet the output is to use 4-byte wchar_t; use of wchar_t values across objects may fail
+=============================================== test session starts ===============================================
+platform linux -- Python 3.10.6, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+rootdir: /home/uboot/u-boot/test/py, configfile: pytest.ini
+plugins: xdist-2.5.0, forked-1.4.0
+collected 1017 items                                                                                              
+
+test/py/tests/test_000_version.py .                                                                         [  0%]
+test/py/tests/test_bind.py FF                                                                               [  0%]
+test/py/tests/test_bootmenu.py .                                                                            [  0%]
+test/py/tests/test_button.py ..                                                                             [  0%]
+test/py/tests/test_dfu.py s                                                                                 [  0%]
+test/py/tests/test_dm.py .....                                                                              [  1%]
+test/py/tests/test_efi_fit.py s                                                                             [  1%]
+test/py/tests/test_efi_loader.py .sss.s                                                                     [  1%]
+test/py/tests/test_efi_selftest.py ssssss                                                                   [  2%]
+test/py/tests/test_env.py ................                                                                  [  4%]
+test/py/tests/test_event_dump.py F                                                                          [  4%]
+test/py/tests/test_extension.py F                                                                           [  4%]
+test/py/tests/test_fit.py .                                                                                 [  4%]
+test/py/tests/test_fit_ecdsa.py .                                                                           [  4%]
+test/py/tests/test_fit_hashes.py .                                                                          [  4%]
+test/py/tests/test_fpga.py ssssssssssssssssssssssssssss                                                     [  7%]
+test/py/tests/test_gpio.py ...sssss                                                                         [  8%]
+test/py/tests/test_gpt.py ........                                                                          [  8%]
+test/py/tests/test_handoff.py s                                                                             [  8%]
+test/py/tests/test_help.py ..s                                                                              [  9%]
+test/py/tests/test_hush_if_test.py ....................................................................     [ 15%]
+test/py/tests/test_kconfig.py .s                                                                            [ 16%]
+test/py/tests/test_log.py s.                                                                                [ 16%]
+test/py/tests/test_lsblk.py .                                                                               [ 16%]
+test/py/tests/test_md.py ..                                                                                 [ 16%]
+test/py/tests/test_mmc_rd.py ssss                                                                           [ 17%]
+test/py/tests/test_mmc_wr.py s                                                                              [ 17%]
+test/py/tests/test_net.py .sssss                                                                            [ 17%]
+test/py/tests/test_ofplatdata.py s                                                                          [ 17%]
+test/py/tests/test_part.py .                                                                                [ 17%]
+test/py/tests/test_pinmux.py .......                                                                        [ 18%]
+test/py/tests/test_pstore.py ...                                                                            [ 18%]
+test/py/tests/test_qfw.py ..                                                                                [ 19%]
+test/py/tests/test_sandbox_exit.py ..s.                                                                     [ 19%]
+test/py/tests/test_scp03.py .                                                                               [ 19%]
+test/py/tests/test_sf.py ssss                                                                               [ 19%]
+test/py/tests/test_shell_basics.py ....                                                                     [ 20%]
+test/py/tests/test_sleep.py s                                                                               [ 20%]
+test/py/tests/test_spl.py s                                                                                 [ 20%]
+test/py/tests/test_stackprotector.py .                                                                      [ 20%]
+test/py/tests/test_tpm2.py ...........                                                                      [ 21%]
+test/py/tests/test_ums.py s                                                                                 [ 21%]
+test/py/tests/test_unknown_cmd.py .                                                                         [ 21%]
+test/py/tests/test_ut.py .................................................................................. [ 29%]
+........................................................................................................... [ 40%]
+..............F........................................................F................................... [ 51%]
+.....................................F.........F........................................................... [ 61%]
+........................................................................................................... [ 72%]
+...............................................................................F...F....FFF................ [ 82%]
+........................                                                                                    [ 84%]
+test/py/tests/test_vboot.py ...............                                                                 [ 86%]
+test/py/tests/test_vpl.py s                                                                                 [ 86%]
+test/py/tests/test_android/test_ab.py .                                                                     [ 86%]
+test/py/tests/test_android/test_abootimg.py .                                                               [ 86%]
+test/py/tests/test_android/test_avb.py ss..s.                                                               [ 87%]
+test/py/tests/test_cat/test_cat.py .                                                                        [ 87%]
+test/py/tests/test_efi_bootmgr/test_efi_bootmgr.py F                                                        [ 87%]
+test/py/tests/test_efi_capsule/test_capsule_firmware_fit.py ss                                              [ 87%]
+test/py/tests/test_efi_capsule/test_capsule_firmware_raw.py ...                                             [ 88%]
+test/py/tests/test_efi_capsule/test_capsule_firmware_signed_fit.py sss                                      [ 88%]
+test/py/tests/test_efi_capsule/test_capsule_firmware_signed_raw.py sss                                      [ 88%]
+test/py/tests/test_efi_secboot/test_authvar.py .....                                                        [ 89%]
+test/py/tests/test_efi_secboot/test_signed.py ........                                                      [ 89%]
+test/py/tests/test_efi_secboot/test_signed_intca.py ...                                                     [ 90%]
+test/py/tests/test_efi_secboot/test_unsigned.py ...                                                         [ 90%]
+test/py/tests/test_eficonfig/test_eficonfig.py F                                                            [ 90%]
+test/py/tests/test_fs/test_basic.py sssssssssssssssssssssssssssssssssssssss                                 [ 94%]
+test/py/tests/test_fs/test_erofs.py F                                                                       [ 94%]
+test/py/tests/test_fs/test_ext.py ssssssssssssssssssssss                                                    [ 96%]
+test/py/tests/test_fs/test_fs_cmd.py .                                                                      [ 96%]
+test/py/tests/test_fs/test_mkdir.py ............                                                            [ 97%]
+test/py/tests/test_fs/test_symlink.py ssss                                                                  [ 98%]
+test/py/tests/test_fs/test_unlink.py ssssssssssssss                                                         [ 99%]
+test/py/tests/test_fs/test_squashfs/test_sqfs_load.py .                                                     [ 99%]
+test/py/tests/test_fs/test_squashfs/test_sqfs_ls.py .                                                       [ 99%]
+test/py/tests/test_xxd/test_xxd.py .                                                                        [100%]
+
+==================================================== FAILURES =====================================================
+___________________________________________ test_bind_unbind_with_node ____________________________________________
+test/py/u_boot_spawn.py:195: in expect
+    c = os.read(self.fd, 1024).decode(errors='replace')
+E   OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+test/py/tests/test_bind.py:39: in test_bind_unbind_with_node
+    response = u_boot_console.run_command('bind  /usb@1 usb_ether')
+test/py/u_boot_console_base.py:266: in run_command
+    m = self.p.expect([self.prompt_compiled] + self.bad_patterns)
+test/py/u_boot_spawn.py:204: in expect
+    raise ValueError('U-Boot exited with %s' % info)
+E   ValueError: U-Boot exited with signal 11 (SIGSEGV)
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> dm tree
+ Class     Index  Probed  Driver                Name
+-----------------------------------------------------------
+ root          0  [ + ]   root_driver           root_driver
+ demo          0  [   ]   demo_shape_drv        |-- demo_shape_drv
+ demo          1  [   ]   demo_simple_drv       |-- demo_simple_drv
+ demo          2  [   ]   demo_shape_drv        |-- demo_shape_drv
+ demo          3  [   ]   demo_simple_drv       |-- demo_simple_drv
+ demo          4  [   ]   demo_shape_drv        |-- demo_shape_drv
+ test          0  [   ]   test_drv              |-- test_drv
+ test          1  [   ]   test_drv              |-- test_drv
+ test          2  [   ]   test_drv              |-- test_drv
+ gpio          0  [   ]   sandbox_gpio          |-- sandbox_gpio
+ rsa_mod_ex    0  [   ]   mod_exp_sw            |-- mod_exp_sw
+ remoteproc    0  [   ]   sandbox_test_proc     |-- sandbox_test_proc
+ qfw           0  [   ]   qfw_sandbox           |-- qfw_sandbox
+ timer         0  [ + ]   sandbox_timer         |-- sandbox_timer
+ serial        0  [ + ]   sandbox_serial        |-- sandbox_serial
+ sysreset      0  [   ]   sysreset_sandbox      |-- sysreset_sandbox
+ bootstd       0  [   ]   bootstd_drv           |-- bootstd
+ bootmeth      0  [   ]   bootmeth_distro       |   |-- syslinux
+ bootmeth      1  [   ]   bootmeth_efi          |   `-- efi
+ reboot-mod    0  [   ]   reboot-mode-gpio      |-- reboot-mode0
+ reboot-mod    1  [   ]   reboot-mode-rtc       |-- reboot-mode@14
+ audio-code    0  [   ]   sandbox_codec         |-- audio-codec
+ button        0  [   ]   button_gpio           |-- buttons
+ button        1  [   ]   button_gpio           |   |-- btn1
+ button        2  [   ]   button_gpio           |   `-- btn2
+ button        3  [   ]   button_adc            |-- buttons2
+ button        4  [   ]   button_adc            |   |-- button-up
+ button        5  [   ]   button_adc            |   |-- button-down
+ button        6  [   ]   button_adc            |   `-- button-enter
+ cros-ec       0  [ + ]   google_cros_ec_sandb  |-- cros-ec
+ pwm           0  [   ]   cros_ec_pwm           |   |-- cros-ec-pwm
+ keyboard      0  [ + ]   google_cros_ec_keyb   |   `-- keyboard-controller
+ dsi_host      0  [   ]   sandbox-dsi-host      |-- dsi_host
+ testfdt       0  [   ]   testfdt_drv           |-- a-test
+ backlight     0  [   ]   pwm_backlight         |-- backlight
+ simple_bus    0  [   ]   simple_bus            |-- bind-test
+ phy           0  [   ]   phy_sandbox           |   |-- bind-test-child1
+ simple_bus    1  [   ]   simple_bus            |   `-- bind-test-child2
+ testfdt       1  [   ]   testfdt_drv           |-- b-test
+ phy           1  [   ]   phy_sandbox           |-- gen_phy@0
+ phy           2  [   ]   phy_sandbox           |-- gen_phy@1
+ phy           3  [   ]   phy_sandbox           |-- gen_phy@2
+ simple_bus    2  [   ]   simple_bus            |-- gen_phy_user
+ simple_bus    3  [   ]   simple_bus            |-- gen_phy_user1
+ testbus       0  [   ]   testbus_drv           |-- some-bus
+ testfdt       2  [   ]   testfdt_drv           |-- d-test
+ testfdt       3  [   ]   testfdt_drv           |-- e-test
+ testfdt       4  [   ]   testfdt_drv           |-- f-test
+ testfdt       5  [   ]   testfdt_drv           |-- g-test
+ testfdt       6  [   ]   testfdt1_drv          |-- h-test
+ testdevres    0  [   ]   testdevres_drv        |-- devres-test
+ testfdt       7  [   ]   testfdt_drv           |-- another-test
+ testbus       1  [   ]   testbus_drv           |-- mmio-bus@0
+ testbus       2  [   ]   testbus_drv           |-- mmio-bus@1
+ testacpi      0  [   ]   testacpi_drv          |-- acpi-test
+ testacpi      1  [   ]   testacpi_drv          |   `-- child
+ testacpi      2  [   ]   testacpi_drv          |-- acpi-test2
+ clk           0  [   ]   sandbox_clk           |-- clk-sbox
+ misc          0  [   ]   sandbox_clk_test      |-- clk-test
+ clk           1  [   ]   sandbox_clk_ccf       |-- clk-ccf
+ efi_media     0  [   ]   sandbox_efi_media     |-- efi-media
+ ethernet      0  [ + ]   eth_sandbox           |-- eth@10002000
+ ethernet      1  [ + ]   eth_sandbox           |-- eth@10003000
+ ethernet      2  [ + ]   eth_sandbox           |-- sbe5
+ ethernet      3  [ + ]   eth_sandbox           |-- eth@10004000
+ ethernet      4  [ + ]   eth_sandbox           |-- phy-test-eth
+ ethernet      5  [ + ]   eth_sandbox           |-- dsa-test-eth
+ dsa           0  [ + ]   dsa_sandbox           |-- dsa-test
+ ethernet      6  [ + ]   dsa-port              |   |-- lan0
+ ethernet      7  [ + ]   dsa-port              |   `-- lan1
+ pinctrl       0  [ + ]   sandbox_pinctrl_gpio  |-- pinctrl-gpio
+ gpio          1  [ + ]   sandbox_gpio          |   |-- base-gpios
+ nop           0  [ + ]   gpio_hog              |   |   |-- hog_input_active_low
+ nop           1  [ + ]   gpio_hog              |   |   |-- hog_input_active_high
+ nop           2  [ + ]   gpio_hog              |   |   |-- hog_output_low
+ nop           3  [ + ]   gpio_hog              |   |   `-- hog_output_high
+ gpio          2  [   ]   sandbox_gpio          |   |-- extra-gpios
+ gpio          3  [   ]   sandbox_gpio          |   `-- pinmux-gpios
+ i2c           0  [ + ]   sandbox_i2c           |-- i2c@0
+ i2c_eeprom    0  [ + ]   i2c_eeprom            |   |-- eeprom@2c
+ i2c_eeprom    1  [   ]   i2c_eeprom_partition  |   |   `-- bootcount@10
+ rtc           0  [ + ]   sandbox_rtc           |   |-- rtc@43
+ rtc           1  [ + ]   sandbox_rtc           |   |-- rtc@61
+ i2c_emul_p    0  [ + ]   sandbox_i2c_emul_par  |   |-- emul
+ i2c_emul      0  [ + ]   sandbox_i2c_eeprom_e  |   |   |-- emul-eeprom
+ i2c_emul      1  [ + ]   sandbox_i2c_rtc_emul  |   |   |-- emul0
+ i2c_emul      2  [ + ]   sandbox_i2c_rtc_emul  |   |   |-- emull
+ i2c_emul      3  [   ]   sandbox_i2c_pmic_emu  |   |   |-- pmic-emul0
+ i2c_emul      4  [   ]   sandbox_i2c_pmic_emu  |   |   `-- pmic-emul1
+ pmic          0  [   ]   sandbox_pmic          |   |-- sandbox_pmic
+ regulator     0  [   ]   sandbox_buck          |   |   |-- buck1
+ regulator     1  [   ]   sandbox_buck          |   |   |-- buck2
+ regulator     2  [   ]   sandbox_ldo           |   |   |-- ldo1
+ regulator     3  [   ]   sandbox_ldo           |   |   |-- ldo2
+ regulator     4  [   ]   sandbox_buck          |   |   `-- no_match_by_nodename
+ pmic          1  [   ]   mc34708_pmic          |   `-- pmic@41
+ bootcount     0  [ + ]   bootcount-rtc         |-- bootcount@0
+ bootcount     1  [   ]   bootcount-i2c-eeprom  |-- bootcount
+ bootcount     2  [   ]   bootcount-syscon      |-- bootcount_4@0
+ bootcount     3  [   ]   bootcount-syscon      |-- bootcount_2@0
+ adc           0  [   ]   sandbox-adc           |-- adc@0
+ iommu         0  [   ]   sandbox_iommu         |-- iommu@0
+ irq           0  [   ]   sandbox_irq           |-- irq
+ video         0  [ + ]   sandbox_lcd_sdl       |-- lcd
+ vidconsole    0  [ + ]   vidconsole_tt         |   `-- lcd.vidconsole_tt
+ nop           4  [ + ]   gpio_led_wrap         |-- leds
+ led           0  [   ]   gpio_led              |   |-- iracibble
+ led           1  [   ]   gpio_led              |   |-- martinet
+ led           2  [ + ]   gpio_led              |   |-- default_on
+ led           3  [ + ]   gpio_led              |   `-- default_off
+ watchdog      0  [ + ]   wdt_gpio              |-- wdt-gpio-toggle
+ watchdog      1  [   ]   wdt_gpio              |-- wdt-gpio-level
+ mailbox       0  [   ]   sandbox_mbox          |-- mbox
+ misc          1  [   ]   sandbox_mbox_test     |-- mbox-test
+ soc           0  [   ]   soc_sandbox           |-- chipid
+ i2s           0  [   ]   sandbox_i2s           |-- i2s
+ nop           5  [   ]   noptest1_drv          |-- nop-test_0
+ nop           6  [   ]   noptest2_drv          |   `-- nop-test_1
+ misc          2  [ + ]   misc_sandbox          |-- misc-test
+ mmc           0  [ + ]   mmc_sandbox           |-- mmc2
+ blk           0  [   ]   mmc_blk               |   |-- mmc2.blk
+ bootdev       0  [   ]   mmc_bootdev           |   `-- mmc2.bootdev
+ mmc           1  [   ]   mmc_sandbox           |-- mmc1
+ blk           1  [   ]   mmc_blk               |   |-- mmc1.blk
+ bootdev       1  [   ]   mmc_bootdev           |   `-- mmc1.bootdev
+ mmc           2  [ + ]   mmc_sandbox           |-- mmc0
+ blk           2  [   ]   mmc_blk               |   |-- mmc0.blk
+ bootdev       2  [   ]   mmc_bootdev           |   `-- mmc0.bootdev
+ pch           0  [   ]   sandbox-pch           |-- pch
+ pci           0  [   ]   pci_sandbox           |-- pci@0
+ pci_generi    0  [   ]   pci_generic_drv       |   |-- pci@0,0
+ pci_generi    1  [   ]   pci_generic_drv       |   |-- pci@1,0
+ p2sb          0  [   ]   p2sb_sandbox          |   |-- p2sb-pci@2,0
+ axi           0  [   ]   sandbox_adder         |   |   |-- adder
+ axi           1  [   ]   sandbox_adder         |   |   `-- adder
+ power-mgr     0  [   ]   pmc_sandbox           |   |-- pci@1e,0
+ pci_generi    2  [   ]   pci_generic_drv       |   `-- pci@1f,0
+ pci_emul_p    0  [   ]   pci_emul_parent_drv   |-- pci-emul0
+ pci_emul      0  [   ]   sandbox_swap_case_em  |   |-- emul0@0,0
+ pci_emul      1  [   ]   sandbox_swap_case_em  |   |-- emul0@1,0
+ pci_emul      2  [   ]   sandbox_swap_case_em  |   |-- emul0@1f,0
+ pci_emul      3  [   ]   sandbox_p2sb_emul_em  |   |-- emul@2,0
+ pci_emul      4  [   ]   sandbox_pmc_emul_emu  |   `-- emul@1e,0
+ pci           1  [   ]   pci_sandbox           |-- pci@1
+ pci           2  [   ]   pci_sandbox           |-- pci@2
+ pci_generi    3  [   ]   pci_generic_drv       |   `-- pci@1f,0
+ pci_emul_p    1  [   ]   pci_emul_parent_drv   |-- pci-emul2
+ pci_emul      5  [   ]   sandbox_swap_case_em  |   `-- emul2@1f,0
+ pci_ep        0  [ + ]   pci_ep_sandbox        |-- pci_ep
+ simple_bus    4  [   ]   simple_bus            |-- probing
+ testprobe     0  [   ]   testprobe_drv         |   |-- test1
+ testprobe     1  [   ]   testprobe_drv         |   |-- test2
+ testprobe     2  [   ]   testprobe_drv         |   |-- test3
+ testprobe     3  [   ]   testprobe_drv         |   `-- test4
+ power_doma    0  [   ]   sandbox_power_domain  |-- power-domain
+ misc          3  [   ]   sandbox_power_domain  |-- power-domain-test
+ pwm           1  [   ]   pwm_sandbox           |-- pwm
+ pwm           2  [   ]   pwm_sandbox           |-- pwm2
+ ram           0  [   ]   ram_sandbox           |-- ram
+ sysreset      1  [   ]   warm_sysreset_sandbo  |-- reset@0
+ sysreset      2  [   ]   sysreset_sandbox      |-- reset@1
+ reset         0  [   ]   sandbox_reset         |-- reset-ctl
+ misc          4  [   ]   sandbox_reset_test    |-- reset-ctl-test
+ rng           0  [   ]   sandbox-rng           |-- rng
+ remoteproc    1  [   ]   sandbox_test_proc     |-- rproc@1
+ remoteproc    2  [   ]   sandbox_test_proc     |-- rproc@2
+ panel         0  [   ]   simple_panel          |-- panel
+ scsi          0  [   ]   sandbox_scsi          |-- scsi
+ smem          0  [   ]   smem_sandbox          |-- smem@0
+ sound         0  [   ]   sandbox_sound         |-- sound
+ spi           0  [   ]   sandbox_spi           |-- spi@0
+ spi_flash     0  [   ]   jedec_spi_nor         |   |-- spi.bin@0
+ spi_flash     1  [   ]   jedec_spi_nor         |   `-- spi.bin@1
+ syscon        0  [   ]   sandbox_syscon        |-- syscon@0
+ syscon        1  [   ]   sandbox_syscon        |-- syscon@1
+ simple_bus    5  [   ]   simple_bus            |-- syscon@2
+ simple_bus    6  [ + ]   simple_bus            |-- syscon@3
+ mux           0  [ + ]   mmio-mux              |   |-- a-mux-controller
+ syscon        2  [ + ]   syscon                |   `-- syscon@3
+ mux           2  [ + ]   mmio-mux              |       `-- a-mux-controller
+ mux           1  [ + ]   mux-emul              |-- emul-mux-controller
+ testfdtm      0  [   ]   testfdtm_drv          |-- testfdtm0
+ testfdtm      1  [   ]   testfdtm_drv          |-- testfdtm1
+ testfdtm      2  [   ]   testfdtm_drv          |-- testfdtm2
+ timer         1  [   ]   sandbox_timer         |-- timer@0
+ timer         2  [   ]   sandbox_timer         |-- timer@1
+ tpm           0  [   ]   sandbox_tpm2          |-- tpm2
+ serial        1  [   ]   sandbox_serial        |-- serial
+ usb           0  [   ]   usb_sandbox           |-- usb@1
+ usb_hub       0  [   ]   usb_hub               |   `-- hub
+ usb_emul      0  [   ]   usb_sandbox_hub       |       `-- hub-emul
+ usb_emul      1  [   ]   usb_sandbox_flash     |           |-- flash-stick@0
+ usb_emul      2  [   ]   usb_sandbox_flash     |           |-- flash-stick@1
+ usb_emul      3  [   ]   usb_sandbox_flash     |           |-- flash-stick@2
+ usb_emul      4  [   ]   usb_sandbox_keyb      |           `-- keyb@3
+ spmi          0  [   ]   sandbox_spmi          |-- spmi@0
+ pmic          2  [   ]   pmic_qcom             |   `-- pm8916@0
+ gpio          4  [   ]   qcom_pmic_gpio        |       `-- gpios@c000
+ watchdog      2  [ + ]   wdt_sandbox           |-- wdt@0
+ axi           2  [   ]   axi_sandbox_bus       |-- axi@0
+ axi_emul      0  [   ]   sandbox_axi_store     |   `-- store@0
+ simple_bus    7  [   ]   simple_bus            |-- translation-test@8000
+ fdt-dummy     0  [   ]   fdt_dummy_drv         |   |-- dev@0,0
+ fdt-dummy     1  [   ]   fdt_dummy_drv         |   |-- dev@1,100
+ fdt-dummy     2  [   ]   fdt_dummy_drv         |   |-- dev@2,200
+ simple_bus    8  [   ]   simple_bus            |   `-- noxlatebus@3,300
+ fdt-dummy     3  [   ]   fdt_dummy_drv         |       `-- dev@42
+ video_osd     0  [   ]   sandbox_osd_drv       |-- osd
+ tee           0  [   ]   sandbox_tee           |-- sandbox_tee
+ virtio        0  [   ]   virtio-sandbox1       |-- sandbox_virtio1
+ virtio        1  [   ]   virtio-sandbox2       |-- sandbox_virtio2
+ misc          5  [   ]   sandbox-scmi_devices  |-- sandbox_scmi
+ pinctrl       1  [ + ]   sandbox_pinctrl       |-- pinctrl
+ pinconfig     0  [ + ]   pinconfig             |   |-- gpios
+ pinconfig     1  [   ]   pinconfig             |   |   |-- gpio0
+ pinconfig     2  [   ]   pinconfig             |   |   |-- gpio1
+ pinconfig     3  [   ]   pinconfig             |   |   |-- gpio2
+ pinconfig     4  [   ]   pinconfig             |   |   `-- gpio3
+ pinconfig     5  [   ]   pinconfig             |   |-- i2c
+ pinconfig     6  [   ]   pinconfig             |   |   |-- groups
+ pinconfig     7  [   ]   pinconfig             |   |   `-- pins
+ pinconfig     8  [ + ]   pinconfig             |   |-- i2s
+ pinconfig     9  [   ]   pinconfig             |   `-- spi
+ pinconfig    10  [   ]   pinconfig             |       `-- cs
+ pinctrl       2  [   ]   single-pinctrl        |-- pinctrl-single-no-width
+ pinctrl       3  [ + ]   single-pinctrl        |-- pinctrl-single-pins
+ pinconfig    11  [   ]   pinconfig             |   |-- pinmux_pwm_pins
+ pinconfig    12  [   ]   pinconfig             |   |-- pinmux_spi0_pins
+ pinconfig    13  [   ]   pinconfig             |   `-- pinmux_uart0_pins
+ pinctrl       4  [ + ]   single-pinctrl        |-- pinctrl-single-bits
+ pinconfig    14  [ + ]   pinconfig             |   |-- pinmux_i2c0_pins
+ pinconfig    15  [ + ]   pinconfig             |   `-- pinmux_lcd_pins
+ hwspinlock    0  [   ]   hwspinlock_sandbox    |-- hwspinlock@0
+ dma           0  [   ]   sandbox-dma           |-- dma
+ mdio-mux      0  [   ]   mdio_mux_sandbox      |-- mdio-mux-test
+ mdio          0  [   ]   mdio-mux-bus-drv      |   |-- mdio-ch-test@0
+ mdio          1  [   ]   mdio-mux-bus-drv      |   `-- mdio-ch-test@1
+ mdio          2  [   ]   mdio_sandbox          |-- mdio-test
+ simple_bus    9  [   ]   simple_pm_bus         |-- pm-bus-test
+ reset         1  [   ]   syscon_reset          |-- syscon-reset
+ misc          6  [   ]   misc_sandbox          |-- syscon-reset-test
+ sysinfo       0  [ + ]   sysinfo_sandbox       |-- sysinfo
+ sysinfo       1  [   ]   sysinfo_gpio          |-- sysinfo-gpio
+ simple_bus   10  [   ]   simple_bus            |-- some_regmapped-bus
+ nop           7  [   ]   regmaptest_drv        |   `-- regmap-test_0
+ thermal       0  [   ]   thermal-sandbox       |-- thermal
+ testfdt       8  [   ]   testfdt_drv           |-- chosen-test
+ simple_bus   11  [   ]   simple_bus            |-- fwupd
+ bootmeth      2  [   ]   vbe_simple            |   `-- firmware0
+ clk           2  [   ]   fixed_clock           |-- clk-fixed
+ clk           3  [   ]   fixed_factor_clock    |-- clk-fixed-factor
+ clk           4  [   ]   fixed_clock           |-- osc
+ firmware      0  [   ]   sandbox_firmware      |-- sandbox-firmware
+ scmi_agent    0  [   ]   sandbox-scmi_agent    `-- scmi
+ clk           5  [   ]   scmi_clk                  |-- protocol@14
+ reset         2  [   ]   scmi_reset_domain         |-- protocol@16
+ nop           8  [   ]   scmi_voltage_domain       `-- regulators
+ regulator     5  [   ]   scmi_regulator                |-- reg@0
+ regulator     6  [   ]   scmi_regulator                `-- reg@1
+=> => bind  /usb@1 usb_ether
+__________________________________________ test_bind_unbind_with_uclass ___________________________________________
+test/py/tests/test_bind.py:131: in test_bind_unbind_with_uclass
+    assert len(child2_line) == 1
+E   AssertionError: assert 2 == 1
+E    +  where 2 = len(['simple_bus    1  [   ]   simple_bus            |   |-- bind-test-child2', 'simple_bus   13  [   ]   simple_bus            |       `-- bind-test-child2'])
+---------------------------------------------- Captured stdout setup ----------------------------------------------
+/u-boot
+Creating new bloblist size 400 at c000
+sandbox_serial serial: pinctrl_select_state_full: uclass_get_device_by_phandle_id: err=-19
+
+
+U-Boot 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 15:18:11 +0000)
+
+Model: sandbox
+DRAM:  256 MiB
+single-pinctrl pinctrl-single-no-width: missing register width
+Core:  258 devices, 95 uclasses, devicetree: board
+WDT:   Not starting wdt-gpio-toggle
+wdt_gpio wdt-gpio-level: Request for wdt gpio failed: -16
+WDT:   Not starting wdt@0
+MMC:   Can't map file 'mmc1.img': Invalid argument
+mmc1: Unable to map file 'mmc1.img'
+Can't map file 'mmc1.img': Invalid argument
+mmc1: Unable to map file 'mmc1.img'
+mmc1 - probe failed: -1
+mmc2: 2 (SD)Can't map file 'mmc1.img': Invalid argument
+mmc1: Unable to map file 'mmc1.img'
+
+Loading Environment from nowhere... OK
+In:    cros-ec-keyb
+Out:   vidconsole
+Err:   vidconsole
+Model: sandbox
+Net:   eth0: eth@10002000, eth5: eth@10003000, eth3: sbe5, eth6: eth@10004000, eth8: phy-test-eth, eth4: dsa-test-eth, eth2: lan0, eth7: lan1
+Hit any key to stop autoboot:  0 
+=> 
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> bind  /bind-test simple_bus
+=> => dm tree
+ Class     Index  Probed  Driver                Name
+-----------------------------------------------------------
+ root          0  [ + ]   root_driver           root_driver
+ demo          0  [   ]   demo_shape_drv        |-- demo_shape_drv
+ demo          1  [   ]   demo_simple_drv       |-- demo_simple_drv
+ demo          2  [   ]   demo_shape_drv        |-- demo_shape_drv
+ demo          3  [   ]   demo_simple_drv       |-- demo_simple_drv
+ demo          4  [   ]   demo_shape_drv        |-- demo_shape_drv
+ test          0  [   ]   test_drv              |-- test_drv
+ test          1  [   ]   test_drv              |-- test_drv
+ test          2  [   ]   test_drv              |-- test_drv
+ gpio          0  [   ]   sandbox_gpio          |-- sandbox_gpio
+ rsa_mod_ex    0  [   ]   mod_exp_sw            |-- mod_exp_sw
+ remoteproc    0  [   ]   sandbox_test_proc     |-- sandbox_test_proc
+ qfw           0  [   ]   qfw_sandbox           |-- qfw_sandbox
+ timer         0  [ + ]   sandbox_timer         |-- sandbox_timer
+ serial        0  [ + ]   sandbox_serial        |-- sandbox_serial
+ sysreset      0  [   ]   sysreset_sandbox      |-- sysreset_sandbox
+ bootstd       0  [   ]   bootstd_drv           |-- bootstd
+ bootmeth      0  [   ]   bootmeth_distro       |   |-- syslinux
+ bootmeth      1  [   ]   bootmeth_efi          |   `-- efi
+ reboot-mod    0  [   ]   reboot-mode-gpio      |-- reboot-mode0
+ reboot-mod    1  [   ]   reboot-mode-rtc       |-- reboot-mode@14
+ audio-code    0  [   ]   sandbox_codec         |-- audio-codec
+ button        0  [   ]   button_gpio           |-- buttons
+ button        1  [   ]   button_gpio           |   |-- btn1
+ button        2  [   ]   button_gpio           |   `-- btn2
+ button        3  [   ]   button_adc            |-- buttons2
+ button        4  [   ]   button_adc            |   |-- button-up
+ button        5  [   ]   button_adc            |   |-- button-down
+ button        6  [   ]   button_adc            |   `-- button-enter
+ cros-ec       0  [ + ]   google_cros_ec_sandb  |-- cros-ec
+ pwm           0  [   ]   cros_ec_pwm           |   |-- cros-ec-pwm
+ keyboard      0  [ + ]   google_cros_ec_keyb   |   `-- keyboard-controller
+ dsi_host      0  [   ]   sandbox-dsi-host      |-- dsi_host
+ testfdt       0  [   ]   testfdt_drv           |-- a-test
+ backlight     0  [   ]   pwm_backlight         |-- backlight
+ simple_bus    0  [   ]   simple_bus            |-- bind-test
+ phy           0  [   ]   phy_sandbox           |   |-- bind-test-child1
+ simple_bus    1  [   ]   simple_bus            |   |-- bind-test-child2
+ simple_bus   12  [   ]   simple_bus            |   `-- bind-test
+ phy           4  [   ]   phy_sandbox           |       |-- bind-test-child1
+ simple_bus   13  [   ]   simple_bus            |       `-- bind-test-child2
+ testfdt       1  [   ]   testfdt_drv           |-- b-test
+ phy           1  [   ]   phy_sandbox           |-- gen_phy@0
+ phy           2  [   ]   phy_sandbox           |-- gen_phy@1
+ phy           3  [   ]   phy_sandbox           |-- gen_phy@2
+ simple_bus    2  [   ]   simple_bus            |-- gen_phy_user
+ simple_bus    3  [   ]   simple_bus            |-- gen_phy_user1
+ testbus       0  [   ]   testbus_drv           |-- some-bus
+ testfdt       2  [   ]   testfdt_drv           |-- d-test
+ testfdt       3  [   ]   testfdt_drv           |-- e-test
+ testfdt       4  [   ]   testfdt_drv           |-- f-test
+ testfdt       5  [   ]   testfdt_drv           |-- g-test
+ testfdt       6  [   ]   testfdt1_drv          |-- h-test
+ testdevres    0  [   ]   testdevres_drv        |-- devres-test
+ testfdt       7  [   ]   testfdt_drv           |-- another-test
+ testbus       1  [   ]   testbus_drv           |-- mmio-bus@0
+ testbus       2  [   ]   testbus_drv           |-- mmio-bus@1
+ testacpi      0  [   ]   testacpi_drv          |-- acpi-test
+ testacpi      1  [   ]   testacpi_drv          |   `-- child
+ testacpi      2  [   ]   testacpi_drv          |-- acpi-test2
+ clk           0  [   ]   sandbox_clk           |-- clk-sbox
+ misc          0  [   ]   sandbox_clk_test      |-- clk-test
+ clk           1  [   ]   sandbox_clk_ccf       |-- clk-ccf
+ efi_media     0  [   ]   sandbox_efi_media     |-- efi-media
+ ethernet      0  [ + ]   eth_sandbox           |-- eth@10002000
+ ethernet      1  [ + ]   eth_sandbox           |-- eth@10003000
+ ethernet      2  [ + ]   eth_sandbox           |-- sbe5
+ ethernet      3  [ + ]   eth_sandbox           |-- eth@10004000
+ ethernet      4  [ + ]   eth_sandbox           |-- phy-test-eth
+ ethernet      5  [ + ]   eth_sandbox           |-- dsa-test-eth
+ dsa           0  [ + ]   dsa_sandbox           |-- dsa-test
+ ethernet      6  [ + ]   dsa-port              |   |-- lan0
+ ethernet      7  [ + ]   dsa-port              |   `-- lan1
+ pinctrl       0  [ + ]   sandbox_pinctrl_gpio  |-- pinctrl-gpio
+ gpio          1  [ + ]   sandbox_gpio          |   |-- base-gpios
+ nop           0  [ + ]   gpio_hog              |   |   |-- hog_input_active_low
+ nop           1  [ + ]   gpio_hog              |   |   |-- hog_input_active_high
+ nop           2  [ + ]   gpio_hog              |   |   |-- hog_output_low
+ nop           3  [ + ]   gpio_hog              |   |   `-- hog_output_high
+ gpio          2  [   ]   sandbox_gpio          |   |-- extra-gpios
+ gpio          3  [   ]   sandbox_gpio          |   `-- pinmux-gpios
+ i2c           0  [ + ]   sandbox_i2c           |-- i2c@0
+ i2c_eeprom    0  [ + ]   i2c_eeprom            |   |-- eeprom@2c
+ i2c_eeprom    1  [   ]   i2c_eeprom_partition  |   |   `-- bootcount@10
+ rtc           0  [ + ]   sandbox_rtc           |   |-- rtc@43
+ rtc           1  [ + ]   sandbox_rtc           |   |-- rtc@61
+ i2c_emul_p    0  [ + ]   sandbox_i2c_emul_par  |   |-- emul
+ i2c_emul      0  [ + ]   sandbox_i2c_eeprom_e  |   |   |-- emul-eeprom
+ i2c_emul      1  [ + ]   sandbox_i2c_rtc_emul  |   |   |-- emul0
+ i2c_emul      2  [ + ]   sandbox_i2c_rtc_emul  |   |   |-- emull
+ i2c_emul      3  [   ]   sandbox_i2c_pmic_emu  |   |   |-- pmic-emul0
+ i2c_emul      4  [   ]   sandbox_i2c_pmic_emu  |   |   `-- pmic-emul1
+ pmic          0  [   ]   sandbox_pmic          |   |-- sandbox_pmic
+ regulator     0  [   ]   sandbox_buck          |   |   |-- buck1
+ regulator     1  [   ]   sandbox_buck          |   |   |-- buck2
+ regulator     2  [   ]   sandbox_ldo           |   |   |-- ldo1
+ regulator     3  [   ]   sandbox_ldo           |   |   |-- ldo2
+ regulator     4  [   ]   sandbox_buck          |   |   `-- no_match_by_nodename
+ pmic          1  [   ]   mc34708_pmic          |   `-- pmic@41
+ bootcount     0  [ + ]   bootcount-rtc         |-- bootcount@0
+ bootcount     1  [   ]   bootcount-i2c-eeprom  |-- bootcount
+ bootcount     2  [   ]   bootcount-syscon      |-- bootcount_4@0
+ bootcount     3  [   ]   bootcount-syscon      |-- bootcount_2@0
+ adc           0  [   ]   sandbox-adc           |-- adc@0
+ iommu         0  [   ]   sandbox_iommu         |-- iommu@0
+ irq           0  [   ]   sandbox_irq           |-- irq
+ video         0  [ + ]   sandbox_lcd_sdl       |-- lcd
+ vidconsole    0  [ + ]   vidconsole_tt         |   `-- lcd.vidconsole_tt
+ nop           4  [ + ]   gpio_led_wrap         |-- leds
+ led           0  [   ]   gpio_led              |   |-- iracibble
+ led           1  [   ]   gpio_led              |   |-- martinet
+ led           2  [ + ]   gpio_led              |   |-- default_on
+ led           3  [ + ]   gpio_led              |   `-- default_off
+ watchdog      0  [ + ]   wdt_gpio              |-- wdt-gpio-toggle
+ watchdog      1  [   ]   wdt_gpio              |-- wdt-gpio-level
+ mailbox       0  [   ]   sandbox_mbox          |-- mbox
+ misc          1  [   ]   sandbox_mbox_test     |-- mbox-test
+ soc           0  [   ]   soc_sandbox           |-- chipid
+ i2s           0  [   ]   sandbox_i2s           |-- i2s
+ nop           5  [   ]   noptest1_drv          |-- nop-test_0
+ nop           6  [   ]   noptest2_drv          |   `-- nop-test_1
+ misc          2  [ + ]   misc_sandbox          |-- misc-test
+ mmc           0  [ + ]   mmc_sandbox           |-- mmc2
+ blk           0  [   ]   mmc_blk               |   |-- mmc2.blk
+ bootdev       0  [   ]   mmc_bootdev           |   `-- mmc2.bootdev
+ mmc           1  [   ]   mmc_sandbox           |-- mmc1
+ blk           1  [   ]   mmc_blk               |   |-- mmc1.blk
+ bootdev       1  [   ]   mmc_bootdev           |   `-- mmc1.bootdev
+ mmc           2  [ + ]   mmc_sandbox           |-- mmc0
+ blk           2  [   ]   mmc_blk               |   |-- mmc0.blk
+ bootdev       2  [   ]   mmc_bootdev           |   `-- mmc0.bootdev
+ pch           0  [   ]   sandbox-pch           |-- pch
+ pci           0  [   ]   pci_sandbox           |-- pci@0
+ pci_generi    0  [   ]   pci_generic_drv       |   |-- pci@0,0
+ pci_generi    1  [   ]   pci_generic_drv       |   |-- pci@1,0
+ p2sb          0  [   ]   p2sb_sandbox          |   |-- p2sb-pci@2,0
+ axi           0  [   ]   sandbox_adder         |   |   |-- adder
+ axi           1  [   ]   sandbox_adder         |   |   `-- adder
+ power-mgr     0  [   ]   pmc_sandbox           |   |-- pci@1e,0
+ pci_generi    2  [   ]   pci_generic_drv       |   `-- pci@1f,0
+ pci_emul_p    0  [   ]   pci_emul_parent_drv   |-- pci-emul0
+ pci_emul      0  [   ]   sandbox_swap_case_em  |   |-- emul0@0,0
+ pci_emul      1  [   ]   sandbox_swap_case_em  |   |-- emul0@1,0
+ pci_emul      2  [   ]   sandbox_swap_case_em  |   |-- emul0@1f,0
+ pci_emul      3  [   ]   sandbox_p2sb_emul_em  |   |-- emul@2,0
+ pci_emul      4  [   ]   sandbox_pmc_emul_emu  |   `-- emul@1e,0
+ pci           1  [   ]   pci_sandbox           |-- pci@1
+ pci           2  [   ]   pci_sandbox           |-- pci@2
+ pci_generi    3  [   ]   pci_generic_drv       |   `-- pci@1f,0
+ pci_emul_p    1  [   ]   pci_emul_parent_drv   |-- pci-emul2
+ pci_emul      5  [   ]   sandbox_swap_case_em  |   `-- emul2@1f,0
+ pci_ep        0  [ + ]   pci_ep_sandbox        |-- pci_ep
+ simple_bus    4  [   ]   simple_bus            |-- probing
+ testprobe     0  [   ]   testprobe_drv         |   |-- test1
+ testprobe     1  [   ]   testprobe_drv         |   |-- test2
+ testprobe     2  [   ]   testprobe_drv         |   |-- test3
+ testprobe     3  [   ]   testprobe_drv         |   `-- test4
+ power_doma    0  [   ]   sandbox_power_domain  |-- power-domain
+ misc          3  [   ]   sandbox_power_domain  |-- power-domain-test
+ pwm           1  [   ]   pwm_sandbox           |-- pwm
+ pwm           2  [   ]   pwm_sandbox           |-- pwm2
+ ram           0  [   ]   ram_sandbox           |-- ram
+ sysreset      1  [   ]   warm_sysreset_sandbo  |-- reset@0
+ sysreset      2  [   ]   sysreset_sandbox      |-- reset@1
+ reset         0  [   ]   sandbox_reset         |-- reset-ctl
+ misc          4  [   ]   sandbox_reset_test    |-- reset-ctl-test
+ rng           0  [   ]   sandbox-rng           |-- rng
+ remoteproc    1  [   ]   sandbox_test_proc     |-- rproc@1
+ remoteproc    2  [   ]   sandbox_test_proc     |-- rproc@2
+ panel         0  [   ]   simple_panel          |-- panel
+ scsi          0  [   ]   sandbox_scsi          |-- scsi
+ smem          0  [   ]   smem_sandbox          |-- smem@0
+ sound         0  [   ]   sandbox_sound         |-- sound
+ spi           0  [   ]   sandbox_spi           |-- spi@0
+ spi_flash     0  [   ]   jedec_spi_nor         |   |-- spi.bin@0
+ spi_flash     1  [   ]   jedec_spi_nor         |   `-- spi.bin@1
+ syscon        0  [   ]   sandbox_syscon        |-- syscon@0
+ syscon        1  [   ]   sandbox_syscon        |-- syscon@1
+ simple_bus    5  [   ]   simple_bus            |-- syscon@2
+ simple_bus    6  [ + ]   simple_bus            |-- syscon@3
+ mux           0  [ + ]   mmio-mux              |   |-- a-mux-controller
+ syscon        2  [ + ]   syscon                |   `-- syscon@3
+ mux           2  [ + ]   mmio-mux              |       `-- a-mux-controller
+ mux           1  [ + ]   mux-emul              |-- emul-mux-controller
+ testfdtm      0  [   ]   testfdtm_drv          |-- testfdtm0
+ testfdtm      1  [   ]   testfdtm_drv          |-- testfdtm1
+ testfdtm      2  [   ]   testfdtm_drv          |-- testfdtm2
+ timer         1  [   ]   sandbox_timer         |-- timer@0
+ timer         2  [   ]   sandbox_timer         |-- timer@1
+ tpm           0  [   ]   sandbox_tpm2          |-- tpm2
+ serial        1  [   ]   sandbox_serial        |-- serial
+ usb           0  [   ]   usb_sandbox           |-- usb@1
+ usb_hub       0  [   ]   usb_hub               |   `-- hub
+ usb_emul      0  [   ]   usb_sandbox_hub       |       `-- hub-emul
+ usb_emul      1  [   ]   usb_sandbox_flash     |           |-- flash-stick@0
+ usb_emul      2  [   ]   usb_sandbox_flash     |           |-- flash-stick@1
+ usb_emul      3  [   ]   usb_sandbox_flash     |           |-- flash-stick@2
+ usb_emul      4  [   ]   usb_sandbox_keyb      |           `-- keyb@3
+ spmi          0  [   ]   sandbox_spmi          |-- spmi@0
+ pmic          2  [   ]   pmic_qcom             |   `-- pm8916@0
+ gpio          4  [   ]   qcom_pmic_gpio        |       `-- gpios@c000
+ watchdog      2  [ + ]   wdt_sandbox           |-- wdt@0
+ axi           2  [   ]   axi_sandbox_bus       |-- axi@0
+ axi_emul      0  [   ]   sandbox_axi_store     |   `-- store@0
+ simple_bus    7  [   ]   simple_bus            |-- translation-test@8000
+ fdt-dummy     0  [   ]   fdt_dummy_drv         |   |-- dev@0,0
+ fdt-dummy     1  [   ]   fdt_dummy_drv         |   |-- dev@1,100
+ fdt-dummy     2  [   ]   fdt_dummy_drv         |   |-- dev@2,200
+ simple_bus    8  [   ]   simple_bus            |   `-- noxlatebus@3,300
+ fdt-dummy     3  [   ]   fdt_dummy_drv         |       `-- dev@42
+ video_osd     0  [   ]   sandbox_osd_drv       |-- osd
+ tee           0  [   ]   sandbox_tee           |-- sandbox_tee
+ virtio        0  [   ]   virtio-sandbox1       |-- sandbox_virtio1
+ virtio        1  [   ]   virtio-sandbox2       |-- sandbox_virtio2
+ misc          5  [   ]   sandbox-scmi_devices  |-- sandbox_scmi
+ pinctrl       1  [ + ]   sandbox_pinctrl       |-- pinctrl
+ pinconfig     0  [ + ]   pinconfig             |   |-- gpios
+ pinconfig     1  [   ]   pinconfig             |   |   |-- gpio0
+ pinconfig     2  [   ]   pinconfig             |   |   |-- gpio1
+ pinconfig     3  [   ]   pinconfig             |   |   |-- gpio2
+ pinconfig     4  [   ]   pinconfig             |   |   `-- gpio3
+ pinconfig     5  [   ]   pinconfig             |   |-- i2c
+ pinconfig     6  [   ]   pinconfig             |   |   |-- groups
+ pinconfig     7  [   ]   pinconfig             |   |   `-- pins
+ pinconfig     8  [ + ]   pinconfig             |   |-- i2s
+ pinconfig     9  [   ]   pinconfig             |   `-- spi
+ pinconfig    10  [   ]   pinconfig             |       `-- cs
+ pinctrl       2  [   ]   single-pinctrl        |-- pinctrl-single-no-width
+ pinctrl       3  [ + ]   single-pinctrl        |-- pinctrl-single-pins
+ pinconfig    11  [   ]   pinconfig             |   |-- pinmux_pwm_pins
+ pinconfig    12  [   ]   pinconfig             |   |-- pinmux_spi0_pins
+ pinconfig    13  [   ]   pinconfig             |   `-- pinmux_uart0_pins
+ pinctrl       4  [ + ]   single-pinctrl        |-- pinctrl-single-bits
+ pinconfig    14  [ + ]   pinconfig             |   |-- pinmux_i2c0_pins
+ pinconfig    15  [ + ]   pinconfig             |   `-- pinmux_lcd_pins
+ hwspinlock    0  [   ]   hwspinlock_sandbox    |-- hwspinlock@0
+ dma           0  [   ]   sandbox-dma           |-- dma
+ mdio-mux      0  [   ]   mdio_mux_sandbox      |-- mdio-mux-test
+ mdio          0  [   ]   mdio-mux-bus-drv      |   |-- mdio-ch-test@0
+ mdio          1  [   ]   mdio-mux-bus-drv      |   `-- mdio-ch-test@1
+ mdio          2  [   ]   mdio_sandbox          |-- mdio-test
+ simple_bus    9  [   ]   simple_pm_bus         |-- pm-bus-test
+ reset         1  [   ]   syscon_reset          |-- syscon-reset
+ misc          6  [   ]   misc_sandbox          |-- syscon-reset-test
+ sysinfo       0  [ + ]   sysinfo_sandbox       |-- sysinfo
+ sysinfo       1  [   ]   sysinfo_gpio          |-- sysinfo-gpio
+ simple_bus   10  [   ]   simple_bus            |-- some_regmapped-bus
+ nop           7  [   ]   regmaptest_drv        |   `-- regmap-test_0
+ thermal       0  [   ]   thermal-sandbox       |-- thermal
+ testfdt       8  [   ]   testfdt_drv           |-- chosen-test
+ simple_bus   11  [   ]   simple_bus            |-- fwupd
+ bootmeth      2  [   ]   vbe_simple            |   `-- firmware0
+ clk           2  [   ]   fixed_clock           |-- clk-fixed
+ clk           3  [   ]   fixed_factor_clock    |-- clk-fixed-factor
+ clk           4  [   ]   fixed_clock           |-- osc
+ firmware      0  [   ]   sandbox_firmware      |-- sandbox-firmware
+ scmi_agent    0  [   ]   sandbox-scmi_agent    `-- scmi
+ clk           5  [   ]   scmi_clk                  |-- protocol@14
+ reset         2  [   ]   scmi_reset_domain         |-- protocol@16
+ nop           8  [   ]   scmi_voltage_domain       `-- regulators
+ regulator     5  [   ]   scmi_regulator                |-- reg@0
+ regulator     6  [   ]   scmi_regulator                `-- reg@1
+=> 
+_________________________________________________ test_event_dump _________________________________________________
+test/py/tests/test_event_dump.py:16: in test_event_dump
+    out = util.run_and_log(cons, ['scripts/event_dump.py', sandbox])
+test/py/u_boot_utils.py:180: in run_and_log
+    output = runner.run(cmd, ignore_errors=ignore_errors, stdin=stdin)
+test/py/multiplexed_log.py:182: in run
+    raise exception
+E   ValueError: Exit code: 1
+---------------------------------------------- Captured stdout call -----------------------------------------------
++scripts/event_dump.py /home/uboot/u-boot/build-sandbox/u-boot
+Event type            Id                              Source location
+--------------------  ------------------------------  ------------------------------
+Traceback (most recent call last):
+  File "/home/uboot/u-boot/scripts/event_dump.py", line 117, in <module>
+    main(sys.argv[1:])
+  File "/home/uboot/u-boot/scripts/event_dump.py", line 114, in main
+    show_event_spy_list(args.elf, args.endian)
+  File "/home/uboot/u-boot/scripts/event_dump.py", line 98, in show_event_spy_list
+    show_sym(fname, data, endian, evtype, sym)
+  File "/home/uboot/u-boot/scripts/event_dump.py", line 67, in show_sym
+    id_data = data[id_ofs:id_ofs + 80]
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+Exit code: 1
+_________________________________________________ test_extension __________________________________________________
+test/py/u_boot_spawn.py:195: in expect
+    c = os.read(self.fd, 1024).decode(errors='replace')
+E   OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+test/py/tests/test_extension.py:42: in test_extension
+    output = u_boot_console.run_command('extension apply 0')
+test/py/u_boot_console_base.py:266: in run_command
+    m = self.p.expect([self.prompt_compiled] + self.bad_patterns)
+test/py/u_boot_spawn.py:204: in expect
+    raise ValueError('U-Boot exited with %s' % info)
+E   ValueError: U-Boot exited with signal 7 (SIGBUS)
+---------------------------------------------- Captured stdout setup ----------------------------------------------
+/u-boot
+Creating new bloblist size 400 at c000
+sandbox_serial serial: pinctrl_select_state_full: uclass_get_device_by_phandle_id: err=-19
+
+
+U-Boot 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 15:18:11 +0000)
+
+Model: sandbox
+DRAM:  256 MiB
+single-pinctrl pinctrl-single-no-width: missing register width
+Core:  258 devices, 95 uclasses, devicetree: board
+WDT:   Not starting wdt-gpio-toggle
+wdt_gpio wdt-gpio-level: Request for wdt gpio failed: -16
+WDT:   Not starting wdt@0
+MMC:   Can't map file 'mmc1.img': Invalid argument
+mmc1: Unable to map file 'mmc1.img'
+Can't map file 'mmc1.img': Invalid argument
+mmc1: Unable to map file 'mmc1.img'
+mmc1 - probe failed: -1
+mmc2: 2 (SD)Can't map file 'mmc1.img': Invalid argument
+mmc1: Unable to map file 'mmc1.img'
+
+Loading Environment from nowhere... OK
+In:    cros-ec-keyb
+Out:   vidconsole
+Err:   vidconsole
+Model: sandbox
+Net:   eth0: eth@10002000, eth5: eth@10003000, eth3: sbe5, eth6: eth@10004000, eth8: phy-test-eth, eth4: dsa-test-eth, eth2: lan0, eth7: lan1
+Hit any key to stop autoboot:  0 
+=> 
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> host load hostfs - $fdt_addr_r /home/uboot/u-boot/build-sandbox/arch/sandbox/dts/sandbox.dtb
+16067 bytes read in 2 ms (7.7 MiB/s)
+=> => fdt addr $fdt_addr_r
+=> => extension list
+No extension registered - Please run "extension scan"
+=> => extension scan
+Found 2 extension board(s).
+=> => extension list
+Extension 0: extension board 0
+        Manufacturer:           sandbox
+        Version:                1.1
+        Devicetree overlay:     overlay0.dtbo
+        Other information:      Fictionnal extension board
+Extension 1: extension board 1
+        Manufacturer:           sandbox
+        Version:                1.1
+        Devicetree overlay:     overlay1.dtbo
+        Other information:      Fictionnal extension board
+=> => setenv extension_overlay_addr 4096
+=> => setenv extension_overlay_cmd 'host load hostfs - ${extension_overlay_addr} /home/uboot/u-boot/build-sandbox/arch/sandbox/dts/${extension_overlay_name}'
+=> => extension apply 0
+________________________________________ test_ut[ut_dm_dm_test_dma_offset] ________________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   AssertionError: assert False
+E    +  where False = <built-in method endswith of str object at 0x3dbdfcd0>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x3dbdfcd0> = 'Test: dm_test_dma_offset: core.c\r\r\ntest/dm/core.c:1235, dm_test_dma_offset(): -0x10000000ULL == dev->dma_offset: E...ffffffff0000000 (-268435456), got 0xf0000000 (4026531840)\r\r\nTest dm_test_dma_offset failed 2 times\r\r\nFailures: 2'.endswith
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut dm dm_test_dma_offset
+Test: dm_test_dma_offset: core.c
+test/dm/core.c:1235, dm_test_dma_offset(): -0x10000000ULL == dev->dma_offset: Expected 0xfffffffff0000000 (-268435456), got 0xf0000000 (4026531840)
+Test: dm_test_dma_offset: core.c (flat tree)
+test/dm/core.c:1235, dm_test_dma_offset(): -0x10000000ULL == dev->dma_offset: Expected 0xfffffffff0000000 (-268435456), got 0xf0000000 (4026531840)
+Test dm_test_dma_offset failed 2 times
+Failures: 2
+=> 
+_________________________________________ test_ut[ut_dm_dm_test_k210_pll] _________________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   AssertionError: assert False
+E    +  where False = <built-in method endswith of str object at 0x3dbbb4e8>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x3dbbb4e8> = 'Test: dm_test_k210_pll: k210_pll.c\r\r\ntest/dm/k210_pll.c:82, dm_test_k210_pll(): 0 == dm_test_k210_pll_compare(&our..._pll_compare(&ours, &theirs): Expected 0x0 (0), got 0x1 (1)\r\r\nTest dm_test_k210_pll failed 2 times\r\r\nFailures: 2'.endswith
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut dm dm_test_k210_pll
+Test: dm_test_k210_pll: k210_pll.c
+test/dm/k210_pll.c:82, dm_test_k210_pll(): 0 == dm_test_k210_pll_compare(&ours, &theirs): Expected 0x0 (0), got 0x1 (1)
+Test: dm_test_k210_pll: k210_pll.c (flat tree)
+test/dm/k210_pll.c:82, dm_test_k210_pll(): 0 == dm_test_k210_pll_compare(&ours, &theirs): Expected 0x0 (0), got 0x1 (1)
+Test dm_test_k210_pll failed 2 times
+Failures: 2
+=> 
+___________________________________________ test_ut[ut_dm_dm_test_part] ___________________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   assert False
+E    +  where False = <built-in method endswith of str object at 0x408db2a0>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x408db2a0> = "Test: dm_test_part: part.c\r\r\n** No device specified **\r\r\nCouldn't find partition mmc <NULL>\r\r\n** No device s...desc, &part_info, whole): Expected 0x0 (0), got 0xfffffffe (-2)\r\r\nTest dm_test_part failed 1 times\r\r\nFailures: 1".endswith
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut dm dm_test_part
+Test: dm_test_part: part.c
+** No device specified **
+Couldn't find partition mmc <NULL>
+** No device specified **
+Couldn't find partition mmc 
+** No partition table - mmc 0 **
+Couldn't find partition mmc 0
+Could not find "test1" partition
+** Bad device specification mmc #test1 **
+** Bad device specification mmc #test1 **
+Couldn't find partition mmc #test1
+** Bad partition specification mmc 1:0 **
+Couldn't find partition mmc 1:0
+Could not find "bogus" partition
+** Bad device specification mmc 1#bogus **
+** Bad device specification mmc 1#bogus **
+Couldn't find partition mmc 1#bogus
+Test: dm_test_part: part.c (flat tree)
+** No device specified **
+Couldn't find partition mmc <NULL>
+** No device specified **
+Couldn't find partition mmc 
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+GUID Partition Table Header signature is wrong: 0xE69100000000 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid GPT ***
+GUID Partition Table Header signature is wrong: 0x0 != 0x5452415020494645
+find_valid_gpt: *** ERROR: Invalid Backup GPT ***
+** Invalid partition 1 **
+Couldn't find partition mmc <NULL>
+test/dm/part.c:20, do_test(): expected == part_get_info_by_dev_and_name_or_num("mmc", part_str, &mmc_dev_desc, &part_info, whole): Expected 0x0 (0), got 0xfffffffe (-2)
+Test dm_test_part failed 1 times
+Failures: 1
+=> 
+__________________________________________ test_ut[ut_dm_dm_test_pci_ea] __________________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   AssertionError: assert False
+E    +  where False = <built-in method endswith of str object at 0x4051a240>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x4051a240> = 'Test: dm_test_pci_ea: pci.c\r\r\nmap_physmem: Warning: partial map at 100000, wanted 4, got 0\r\r\nmap_physmem: Warni...== *(u32 *)bar: Expected 0x74747474 (1953789044), got 0x0 (0)\r\r\nTest dm_test_pci_ea failed 2 times\r\r\nFailures: 2'.endswith
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut dm dm_test_pci_ea
+Test: dm_test_pci_ea: pci.c
+map_physmem: Warning: partial map at 100000, wanted 4, got 0
+map_physmem: Warning: partial map at 110000, wanted ff, got 0
+map_physmem: Warning: partial map at 110000, wanted ff, got 0
+map_physmem: Warning: partial map at 120000, wanted ffff, got 0
+test/dm/pci.c:293, dm_test_pci_ea(): PCI_EA_BAR4_MAGIC == *(u32 *)bar: Expected 0x74747474 (1953789044), got 0x0 (0)
+Test: dm_test_pci_ea: pci.c (flat tree)
+map_physmem: Warning: partial map at 100000, wanted 4, got 0
+map_physmem: Warning: partial map at 110000, wanted ff, got 0
+map_physmem: Warning: partial map at 110000, wanted ff, got 0
+map_physmem: Warning: partial map at 120000, wanted ffff, got 0
+test/dm/pci.c:293, dm_test_pci_ea(): PCI_EA_BAR4_MAGIC == *(u32 *)bar: Expected 0x74747474 (1953789044), got 0x0 (0)
+Test dm_test_pci_ea failed 2 times
+Failures: 2
+=> 
+_____________________________________ test_ut[ut_print_print_display_buffer] ______________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   assert False
+E    +  where False = <built-in method endswith of str object at 0x408f5618>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x408f5618> = 'Test: print_display_buffer: print_ut.c\r\r\n00000000: 00 11 22 33 44 55 66 77 88 99 aa bb cc dd ee ff  .."3DUfw.........: 0000000000000000 0000000000000088  ........_..6....\'\r\r\nTest print_display_buffer failed 1 times\r\r\nFailures: 1'.endswith
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut print print_display_buffer
+Test: print_display_buffer: print_ut.c
+00000000: 00 11 22 33 44 55 66 77 88 99 aa bb cc dd ee ff  .."3DUfw........
+00000010: 10 00                                            ..
+00000000: 00 11 22 33 44 55 66 77  .."3DUfw
+00000008: 88 99 aa bb cc dd ee ff  ........
+00000010: 10 00                    ..
+00000000: 00 11 22 33 44 55 66 77 88 99 aa bb cc dd ee ff 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  .."3DUfw........................................................
+00000040: 00 41                                                                                                                                                                                            .A
+12345678: 00 11 22 33 44 55 66 77 88 99 aa bb cc dd ee ff  .."3DUfw........
+12345688: 10 00                                            ..
+00000000: 1100 3322 5544 7766 9988 bbaa ddcc ffee  .."3DUfw........
+00000010: 0010                                     ..
+00000000: 33221100 77665544 bbaa9988 ffeeddcc  .."3DUfw........
+00000010: 00000010                             ....
+00000000: 0000000000000000 0000000000000088  ........_..6....
+00000010: 0000000000000010                   ........
+test/print_ut.c:225, print_display_buffer(): console: 
+Expected '00000000: 7766554433221100 ffeeddccbbaa9988  .."3DUfw........',
+     got '00000000: 0000000000000000 0000000000000088  ........_..6....'
+Test print_display_buffer failed 1 times
+Failures: 1
+=> 
+______________________________________ test_ut[ut_print_print_hexdump_line] _______________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   AssertionError: assert False
+E    +  where False = <built-in method endswith of str object at 0x3cc34020>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x3cc34020> = 'Test: print_hexdump_line: print_ut.c\r\r\ntest/print_ut.c:262, print_hexdump_line(): -1 == linebuf[0]: Expected 0xffffffff (-1), got 0xff (255)\r\r\nTest print_hexdump_line failed 1 times\r\r\nFailures: 1'.endswith
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut print print_hexdump_line
+Test: print_hexdump_line: print_ut.c
+test/print_ut.c:262, print_hexdump_line(): -1 == linebuf[0]: Expected 0xffffffff (-1), got 0xff (255)
+Test print_hexdump_line failed 1 times
+Failures: 1
+=> 
+______________________________________ test_ut[ut_setexpr_setexpr_test_int] _______________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   assert False
+E    +  where False = <built-in method endswith of str object at 0x3e7c26b0>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x3e7c26b0> = 'Test: setexpr_test_int: setexpr.c\r\r\ntest/cmd/setexpr.c:55, setexpr_test_int(): "456789abcdef0123" = env_get("fred"): Expected "456789abcdef0123", got "cdef0123"\r\r\nTest setexpr_test_int failed 1 times\r\r\nFailures: 1'.endswith
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut setexpr setexpr_test_int
+Test: setexpr_test_int: setexpr.c
+test/cmd/setexpr.c:55, setexpr_test_int(): "456789abcdef0123" = env_get("fred"): Expected "456789abcdef0123", got "cdef0123"
+Test setexpr_test_int failed 1 times
+Failures: 1
+=> 
+______________________________________ test_ut[ut_setexpr_setexpr_test_oper] ______________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   assert False
+E    +  where False = <built-in method endswith of str object at 0x3e5c1db8>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x3e5c1db8> = 'Test: setexpr_test_oper: setexpr.c\r\r\ntest/cmd/setexpr.c:140, setexpr_test_oper(): "61ebfa800" = env_get("fred"): Expected "61ebfa800", got "1ebfa800"\r\r\nTest setexpr_test_oper failed 1 times\r\r\nFailures: 1'.endswith
+---------------------------------------------- Captured stdout setup ----------------------------------------------
+/u-boot
+Creating new bloblist size 400 at c000
+sandbox_serial serial: pinctrl_select_state_full: uclass_get_device_by_phandle_id: err=-19
+
+
+U-Boot 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 15:18:11 +0000)
+
+Model: sandbox
+DRAM:  256 MiB
+single-pinctrl pinctrl-single-no-width: missing register width
+Core:  258 devices, 95 uclasses, devicetree: board
+WDT:   Not starting wdt-gpio-toggle
+wdt_gpio wdt-gpio-level: Request for wdt gpio failed: -16
+WDT:   Not starting wdt@0
+MMC:   mmc2: 2 (SD), mmc1: 1 (SD), mmc0: 0 (SD)
+Loading Environment from nowhere... OK
+In:    cros-ec-keyb
+Out:   vidconsole
+Err:   vidconsole
+Model: sandbox
+Net:   eth0: eth@10002000, eth5: eth@10003000, eth3: sbe5, eth6: eth@10004000, eth8: phy-test-eth, eth4: dsa-test-eth, eth2: lan0, eth7: lan1
+Hit any key to stop autoboot:  0 
+=> 
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut setexpr setexpr_test_oper
+Test: setexpr_test_oper: setexpr.c
+test/cmd/setexpr.c:140, setexpr_test_oper(): "61ebfa800" = env_get("fred"): Expected "61ebfa800", got "1ebfa800"
+Test setexpr_test_oper failed 1 times
+Failures: 1
+=> 
+______________________________________ test_ut[ut_setexpr_setexpr_test_plus] ______________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   assert False
+E    +  where False = <built-in method endswith of str object at 0x3deef210>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x3deef210> = 'Test: setexpr_test_plus: setexpr.c\r\r\ntest/cmd/setexpr.c:99, setexpr_test_plus(): "8eeebc2f407393a6" = env_get("fred"): Expected "8eeebc2f407393a6", got "407393a6"\r\r\nTest setexpr_test_plus failed 1 times\r\r\nFailures: 1'.endswith
+---------------------------------------------- Captured stdout setup ----------------------------------------------
+/u-boot
+Creating new bloblist size 400 at c000
+sandbox_serial serial: pinctrl_select_state_full: uclass_get_device_by_phandle_id: err=-19
+
+
+U-Boot 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 15:18:11 +0000)
+
+Model: sandbox
+DRAM:  256 MiB
+single-pinctrl pinctrl-single-no-width: missing register width
+Core:  258 devices, 95 uclasses, devicetree: board
+WDT:   Not starting wdt-gpio-toggle
+wdt_gpio wdt-gpio-level: Request for wdt gpio failed: -16
+WDT:   Not starting wdt@0
+MMC:   mmc2: 2 (SD), mmc1: 1 (SD), mmc0: 0 (SD)
+Loading Environment from nowhere... OK
+In:    cros-ec-keyb
+Out:   vidconsole
+Err:   vidconsole
+Model: sandbox
+Net:   eth0: eth@10002000, eth5: eth@10003000, eth3: sbe5, eth6: eth@10004000, eth8: phy-test-eth, eth4: dsa-test-eth, eth2: lan0, eth7: lan1
+Hit any key to stop autoboot:  0 
+=> 
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut setexpr setexpr_test_plus
+Test: setexpr_test_plus: setexpr.c
+test/cmd/setexpr.c:99, setexpr_test_plus(): "8eeebc2f407393a6" = env_get("fred"): Expected "8eeebc2f407393a6", got "407393a6"
+Test setexpr_test_plus failed 1 times
+Failures: 1
+=> 
+________________________________________________ test_efi_bootmgr _________________________________________________
+test/py/tests/test_efi_bootmgr/test_efi_bootmgr.py:29: in test_efi_bootmgr
+    response = u_boot_console.run_command(cmd = 'load', wait_for_echo=False)
+test/py/u_boot_console_base.py:266: in run_command
+    m = self.p.expect([self.prompt_compiled] + self.bad_patterns)
+test/py/u_boot_spawn.py:193: in expect
+    raise Timeout()
+E   u_boot_spawn.Timeout
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> host bind 0 /home/uboot/u-boot/build-sandbox/persistent-data/efi_bootmgr.img
+=> => efidebug boot add -b 0001 label-1 host 0:1 initrddump.efi -i host 0:1 initrd-1.img -s nocolor
+fs_devread read outside partition 2
+Failed to mount ext2 filesystem...
+BTRFS: superblock end 69632 is larger than device size 512
+fs_devread read outside partition 0
+fs_devread read outside partition 2
+Failed to mount ext2 filesystem...
+BTRFS: superblock end 69632 is larger than device size 512
+fs_devread read outside partition 0
+Cannot read EFI system partition
+Cannot read EFI system partition
+Failed to persist EFI variables
+=> => efidebug boot dump
+Boot0001:
+attributes: A-- (0x00000001)
+  label: label-1
+  file_path: /HD(1,GPT,aa0b958b-25eb-421e-9cf3-cf90283c3f2c,0x80,0x947)/initrddump.efi
+  initrd_path: /HD(1,GPT,aa0b958b-25eb-421e-9cf3-cf90283c3f2c,0x80,0x947)/initrd-1.img
+  data:
+    00000000: 6e 00 6f 00 63 00 6f 00 6c 00 6f 00 72 00 00 00  n.o.c.o.l.o.r...
+=> => efidebug boot order 0001
+Cannot read EFI system partition
+Failed to persist EFI variables
+=> => bootefi bootmgr
+Booting: label-1
+
+INITRD Dump
+===========
+
+=> => 
+^[[33;115R_______________________________________________ test_efi_eficonfig ________________________________________________
+test/py/tests/test_eficonfig/test_eficonfig.py:140: in test_efi_eficonfig
+    send_user_input_and_wait('nocolor', None)
+test/py/tests/test_eficonfig/test_eficonfig.py:15: in send_user_input_and_wait
+    u_boot_console.run_command(cmd=user_str, wait_for_prompt=False,
+test/py/u_boot_console_base.py:256: in run_command
+    m = self.p.expect([chunk] + self.bad_patterns)
+test/py/u_boot_spawn.py:193: in expect
+    raise Timeout()
+E   u_boot_spawn.Timeout
+---------------------------------------------- Captured stdout call -----------------------------------------------
+/u-boot
+Creating new bloblist size 400 at c000
+sandbox_serial serial: pinctrl_select_state_full: uclass_get_device_by_phandle_id: err=-19
+
+  ** Edit Optional Data **
+
+  enter optional data: 
+^[[33;115R___________________________________________________ test_erofs ____________________________________________________
+test/py/tests/test_fs/test_erofs.py:201: in test_erofs
+    make_erofs_image(build_dir)CTRL+C to quit
+test/py/tests/test_fs/test_erofs.py:56: in make_erofs_image
+    subprocess.run(['mkfs.erofs -zlz4 ' + args], shell=True, check=True,
+/usr/lib/python3.10/subprocess.py:524: in run
+    raise CalledProcessError(retcode, process.args,
+E   subprocess.CalledProcessError: Command '['mkfs.erofs -zlz4 /home/uboot/u-boot/build-sandbox/erofs.img /home/uboot/u-boot/build-sandbox/erofs_src_dir']' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+test/py/tests/test_fs/test_erofs.py:208: in test_erofs
+    raise AssertionError
+E   AssertionError
+---------------------------------------------- Captured stderr call -----------------------------------------------
+mkfs.erofs 1.4
+        c_version:           [     1.4]
+        c_dbg_lvl:           [       2]
+        c_dry_run:           [       0]
+<E> erofs: Failed to build shared xattrs: [Error 75] Value too large for defined data type
+<E> erofs:      Could not format the device : [Error 75] Value too large for defined data type
+
+============================================= short test summary info =============================================
+FAILED test/py/tests/test_bind.py::test_bind_unbind_with_node - ValueError: U-Boot exited with signal 11 (SIGSEGV)
+FAILED test/py/tests/test_bind.py::test_bind_unbind_with_uclass - AssertionError: assert 2 == 1
+FAILED test/py/tests/test_event_dump.py::test_event_dump - ValueError: Exit code: 1
+FAILED test/py/tests/test_extension.py::test_extension - ValueError: U-Boot exited with signal 7 (SIGBUS)
+FAILED test/py/tests/test_ut.py::test_ut[ut_dm_dm_test_dma_offset] - AssertionError: assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_dm_dm_test_k210_pll] - AssertionError: assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_dm_dm_test_part] - assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_dm_dm_test_pci_ea] - AssertionError: assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_print_print_display_buffer] - assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_print_print_hexdump_line] - AssertionError: assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_setexpr_setexpr_test_int] - assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_setexpr_setexpr_test_oper] - assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_setexpr_setexpr_test_plus] - assert False
+FAILED test/py/tests/test_efi_bootmgr/test_efi_bootmgr.py::test_efi_bootmgr - u_boot_spawn.Timeout
+FAILED test/py/tests/test_eficonfig/test_eficonfig.py::test_efi_eficonfig - u_boot_spawn.Timeout
+FAILED test/py/tests/test_fs/test_erofs.py::test_erofs - AssertionError
+============================ 16 failed, 842 passed, 159 skipped in 16565.50s (4:36:05) ============================
+
+sandbox_spl: +make O=/home/uboot/u-boot/build-sandbox_spl -s sandbox_spl_defconfig
++make O=/home/uboot/u-boot/build-sandbox_spl -s -j8
+/home/uboot/u-boot/build-sandbox_spl/../scripts/dtc/pylibfdt/setup.py:21: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  from distutils.core import setup, Extension
+/usr/bin/ld: warning: keep-syms-lto.o uses 2-byte wchar_t yet the output is to use 4-byte wchar_t; use of wchar_t values across objects may fail
+../test/image/spl_load.c: In function ‘read_fit_image’:
+../test/image/spl_load.c:32:45: warning: format ‘%zx’ expects argument of type ‘size_t’, but argument 2 has type ‘off_t’ {aka ‘long int’} [-Wformat=]
+   32 |                 printf("Failed to seek to %zx, got %zx (errno=%d)\n", offset,
+      |                                           ~~^                         ~~~~~~
+      |                                             |                         |
+      |                                             unsigned int              off_t {aka long int}
+      |                                           %lx
+../test/image/spl_load.c:32:54: warning: format ‘%zx’ expects argument of type ‘size_t’, but argument 3 has type ‘off_t’ {aka ‘long int’} [-Wformat=]
+   32 |                 printf("Failed to seek to %zx, got %zx (errno=%d)\n", offset,
+      |                                                    ~~^
+      |                                                      |
+      |                                                      unsigned int
+      |                                                    %lx
+   33 |                        ret, errno);
+      |                        ~~~                            
+      |                        |
+      |                        off_t {aka long int}
+../test/image/spl_load.c:39:57: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘ssize_t’ {aka ‘int’} [-Wformat=]
+   39 |                 printf("Failed to read %lx bytes, got %ld (errno=%d)\n",
+      |                                                       ~~^
+      |                                                         |
+      |                                                         long int
+      |                                                       %d
+   40 |                        count * load->bl_len, res, errno);
+      |                                              ~~~         
+      |                                              |
+      |                                              ssize_t {aka int}
+/usr/bin/ld: warning: keep-syms-lto.o uses 2-byte wchar_t yet the output is to use 4-byte wchar_t; use of wchar_t values across objects may fail
+=============================================== test session starts ===============================================
+platform linux -- Python 3.10.6, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+rootdir: /home/uboot/u-boot/test/py, configfile: pytest.ini
+plugins: xdist-2.5.0, forked-1.4.0
+collected 957 items / 945 deselected / 12 selected                                                                
+
+test/py/tests/test_handoff.py .                                                                             [  8%]
+test/py/tests/test_ofplatdata.py .                                                                          [ 16%]
+test/py/tests/test_spl.py .F....F..F                                                                        [100%]
+
+==================================================== FAILURES =====================================================
+_______________________________________ test_spl[ut_dm_dm_test_of_plat_clk] _______________________________________
+test/py/u_boot_spawn.py:195: in expect
+    c = os.read(self.fd, 1024).decode(errors='replace')
+E   OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+test/py/tests/test_spl.py:27: in test_spl
+    cons.restart_uboot_with_flags(['-u', '-k', ut_spl_subtest.split()[1]])
+test/py/u_boot_console_sandbox.py:80: in restart_uboot_with_flags
+    return self.restart_uboot(expect_reset)
+test/py/u_boot_console_base.py:459: in restart_uboot
+    self.ensure_spawned(expect_reset)
+test/py/u_boot_console_base.py:423: in ensure_spawned
+    self.wait_for_boot_prompt(loop_num = loop_num)
+test/py/u_boot_console_base.py:174: in wait_for_boot_prompt
+    m = self.p.expect([pattern_u_boot_main_signon] + self.bad_patterns)
+test/py/u_boot_spawn.py:204: in expect
+    raise ValueError('U-Boot exited with %s' % info)
+E   ValueError: U-Boot exited with signal 7 (SIGBUS)
+---------------------------------------------- Captured stdout call -----------------------------------------------
+/spl/u-boot-spl
+
+U-Boot SPL 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:07:06 +0000)
+Creating new bloblist size 400 at c000
+Test: dm_test_of_plat_clk: of_platdata.c (flat tree)
+/spl/u-boot-spl
+
+U-Boot SPL 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:07:06 +0000)
+Creating new bloblist size 400 at c000
+Finished bloblist size 400 at c000
+Finished bloblist size 400 at c000
+Found existing bloblist size 400 at c000
+
+
+U-Boot 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:07:06 +0000)
+
+Model: sandbox
+DRAM:  256 MiB
+Core:  221 devices, 83 uclasses, devicetree: board
+MMC:   mmc2: 2 (SD), mmc1: 1 (SD), mmc0: 0 (SD)
+Loading Environment from nowhere... OK
+In:    cros-ec-keyb
+Out:   vidconsole
+Err:   vidconsole
+Model: sandbox
+Net:   eth0: eth@10002000, eth5: eth@10003000, eth3: sbe5, eth6: eth@10004000, eth8: phy-test-eth, eth4: dsa-test-eth, eth2: lan0, eth7: lan1
+Hit any key to stop autoboot:  0 
+=> 
+_____________________________________ test_spl[ut_dm_dm_test_of_plat_phandle] _____________________________________
+test/py/u_boot_spawn.py:195: in expect
+    c = os.read(self.fd, 1024).decode(errors='replace')
+E   OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+test/py/tests/test_spl.py:27: in test_spl
+    cons.restart_uboot_with_flags(['-u', '-k', ut_spl_subtest.split()[1]])
+test/py/u_boot_console_sandbox.py:80: in restart_uboot_with_flags
+    return self.restart_uboot(expect_reset)
+test/py/u_boot_console_base.py:459: in restart_uboot
+    self.ensure_spawned(expect_reset)
+test/py/u_boot_console_base.py:423: in ensure_spawned
+    self.wait_for_boot_prompt(loop_num = loop_num)
+test/py/u_boot_console_base.py:174: in wait_for_boot_prompt
+    m = self.p.expect([pattern_u_boot_main_signon] + self.bad_patterns)
+test/py/u_boot_spawn.py:204: in expect
+    raise ValueError('U-Boot exited with %s' % info)
+E   ValueError: U-Boot exited with signal 7 (SIGBUS)
+---------------------------------------------- Captured stdout call -----------------------------------------------
+/spl/u-boot-spl
+
+U-Boot SPL 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:07:06 +0000)
+Creating new bloblist size 400 at c000
+Test: dm_test_of_plat_phandle: of_platdata.c (flat tree)
+/spl/u-boot-spl
+
+U-Boot SPL 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:07:06 +0000)
+Creating new bloblist size 400 at c000
+Finished bloblist size 400 at c000
+Finished bloblist size 400 at c000
+Found existing bloblist size 400 at c000
+
+
+U-Boot 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:07:06 +0000)
+
+Model: sandbox
+DRAM:  256 MiB
+Core:  221 devices, 83 uclasses, devicetree: board
+MMC:   mmc2: 2 (SD), mmc1: 1 (SD), mmc0: 0 (SD)
+Loading Environment from nowhere... OK
+In:    cros-ec-keyb
+Out:   vidconsole
+Err:   vidconsole
+Model: sandbox
+Net:   eth0: eth@10002000, eth5: eth@10003000, eth3: sbe5, eth6: eth@10004000, eth8: phy-test-eth, eth4: dsa-test-eth, eth2: lan0, eth7: lan1
+Hit any key to stop autoboot:  0 
+=> 
+_________________________________________ test_spl[ut_spl_spl_test_load] __________________________________________
+test/py/tests/test_spl.py:29: in test_spl
+    assert 'Failures: 0' in output
+E   AssertionError: assert 'Failures: 0' in '\nU-Boot SPL 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:07:06 +0000)\nCreating new bloblist size 400 at c000\nTest: ... eth8: phy-test-eth, eth4: dsa-test-eth, eth2: lan0, eth7: lan1\nHit any key to stop autoboot:  2 \x08\x08\x08 0 \n=> '
+---------------------------------------------- Captured stdout call -----------------------------------------------
+/spl/u-boot-spl
+
+U-Boot SPL 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:07:06 +0000)
+Creating new bloblist size 400 at c000
+Test: spl_test_load: spl_load.c
+alloc space exhausted
+Could not get FIT buffer of 509952 bytes
+        check CONFIG_SYS_SPL_MALLOC_SIZE
+Failed to read 37833800 bytes, got -1 (errno=0)
+test/image/spl_load.c:87, spl_test_load(): 0 == spl_load_simple_fit(&image, &load, 0, header): Expected 0x0 (0), got 0xfffffffb (-5)
+Test spl_test_load failed 1 times
+Failures: 1
+Finished bloblist size 400 at c000
+Finished bloblist size 400 at c000
+Found existing bloblist size 400 at c000
+
+
+U-Boot 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:07:06 +0000)
+
+Model: sandbox
+DRAM:  256 MiB
+Core:  221 devices, 83 uclasses, devicetree: board
+MMC:   mmc2: 2 (SD), mmc1: 1 (SD), mmc0: 0 (SD)
+Loading Environment from nowhere... OK
+In:    cros-ec-keyb
+Out:   vidconsole
+Err:   vidconsole
+Model: sandbox
+Net:   eth0: eth@10002000, eth5: eth@10003000, eth3: sbe5, eth6: eth@10004000, eth8: phy-test-eth, eth4: dsa-test-eth, eth2: lan0, eth7: lan1
+Hit any key to stop autoboot:  0 
+=> /spl/u-boot-spl
+
+U-Boot SPL 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:07:06 +0000)
+Creating new bloblist size 400 at c000
+Finished bloblist size 400 at c000
+Finished bloblist size 400 at c000
+Found existing bloblist size 400 at c000
+
+
+U-Boot 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:07:06 +0000)
+
+Model: sandbox
+DRAM:  256 MiB
+Core:  221 devices, 83 uclasses, devicetree: board
+MMC:   mmc2: 2 (SD), mmc1: 1 (SD), mmc0: 0 (SD)
+Loading Environment from nowhere... OK
+In:    cros-ec-keyb
+Out:   vidconsole
+Err:   vidconsole
+Model: sandbox
+Net:   eth0: eth@10002000, eth5: eth@10003000, eth3: sbe5, eth6: eth@10004000, eth8: phy-test-eth, eth4: dsa-test-eth, eth2: lan0, eth7: lan1
+Hit any key to stop autoboot:  0 
+=> 
+============================================= short test summary info =============================================
+FAILED test/py/tests/test_spl.py::test_spl[ut_dm_dm_test_of_plat_clk] - ValueError: U-Boot exited with signal 7 ...
+FAILED test/py/tests/test_spl.py::test_spl[ut_dm_dm_test_of_plat_phandle] - ValueError: U-Boot exited with signa...
+FAILED test/py/tests/test_spl.py::test_spl[ut_spl_spl_test_load] - AssertionError: assert 'Failures: 0' in '\nU-...
+================================== 3 failed, 9 passed, 945 deselected in 34.31s ===================================
+
+sandbox_spl: +make O=/home/uboot/u-boot/build-sandbox_noinst -s sandbox_noinst_defconfig
++make O=/home/uboot/u-boot/build-sandbox_noinst -s -j8
+/home/uboot/u-boot/build-sandbox_noinst/../scripts/dtc/pylibfdt/setup.py:21: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  from distutils.core import setup, Extension
+/usr/bin/ld: warning: keep-syms-lto.o uses 2-byte wchar_t yet the output is to use 4-byte wchar_t; use of wchar_t values across objects may fail
+../test/image/spl_load.c: In function ‘read_fit_image’:
+../test/image/spl_load.c:32:45: warning: format ‘%zx’ expects argument of type ‘size_t’, but argument 2 has type ‘off_t’ {aka ‘long int’} [-Wformat=]
+   32 |                 printf("Failed to seek to %zx, got %zx (errno=%d)\n", offset,
+      |                                           ~~^                         ~~~~~~
+      |                                             |                         |
+      |                                             unsigned int              off_t {aka long int}
+      |                                           %lx
+../test/image/spl_load.c:32:54: warning: format ‘%zx’ expects argument of type ‘size_t’, but argument 3 has type ‘off_t’ {aka ‘long int’} [-Wformat=]
+   32 |                 printf("Failed to seek to %zx, got %zx (errno=%d)\n", offset,
+      |                                                    ~~^
+      |                                                      |
+      |                                                      unsigned int
+      |                                                    %lx
+   33 |                        ret, errno);
+      |                        ~~~                            
+      |                        |
+      |                        off_t {aka long int}
+../test/image/spl_load.c:39:57: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘ssize_t’ {aka ‘int’} [-Wformat=]
+   39 |                 printf("Failed to read %lx bytes, got %ld (errno=%d)\n",
+      |                                                       ~~^
+      |                                                         |
+      |                                                         long int
+      |                                                       %d
+   40 |                        count * load->bl_len, res, errno);
+      |                                              ~~~         
+      |                                              |
+      |                                              ssize_t {aka int}
+/usr/bin/ld: warning: keep-syms-lto.o uses 2-byte wchar_t yet the output is to use 4-byte wchar_t; use of wchar_t values across objects may fail
+=============================================== test session starts ===============================================
+platform linux -- Python 3.10.6, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+rootdir: /home/uboot/u-boot/test/py, configfile: pytest.ini
+plugins: xdist-2.5.0, forked-1.4.0
+collected 957 items / 945 deselected / 12 selected                                                                
+
+test/py/tests/test_handoff.py s                                                                             [  8%]
+test/py/tests/test_ofplatdata.py s                                                                          [ 16%]
+test/py/tests/test_spl.py .........F                                                                        [100%]
+
+==================================================== FAILURES =====================================================
+_________________________________________ test_spl[ut_spl_spl_test_load] __________________________________________
+test/py/tests/test_spl.py:29: in test_spl
+    assert 'Failures: 0' in output
+E   AssertionError: assert 'Failures: 0' in '\nU-Boot SPL 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:20:06 +0000)\nCreating new bloblist size 400 at c000\nTest: ... eth8: phy-test-eth, eth4: dsa-test-eth, eth2: lan0, eth7: lan1\nHit any key to stop autoboot:  2 \x08\x08\x08 0 \n=> '
+---------------------------------------------- Captured stdout call -----------------------------------------------
+/spl/u-boot-spl
+
+U-Boot SPL 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:20:06 +0000)
+Creating new bloblist size 400 at c000
+Test: spl_test_load: spl_load.c
+alloc space exhausted
+Could not get FIT buffer of 509952 bytes
+        check CONFIG_SYS_SPL_MALLOC_SIZE
+Failed to read 37634000 bytes, got -1 (errno=0)
+test/image/spl_load.c:87, spl_test_load(): 0 == spl_load_simple_fit(&image, &load, 0, header): Expected 0x0 (0), got 0xfffffffb (-5)
+Test spl_test_load failed 1 times
+Failures: 1
+Finished bloblist size 400 at c000
+Finished bloblist size 400 at c000
+Found existing bloblist size 400 at c000
+
+
+U-Boot 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:20:06 +0000)
+
+Model: sandbox
+DRAM:  256 MiB
+Core:  219 devices, 82 uclasses, devicetree: board
+MMC:   mmc2: 2 (SD), mmc1: 1 (SD), mmc0: 0 (SD)
+Loading Environment from nowhere... OK
+In:    cros-ec-keyb
+Out:   vidconsole
+Err:   vidconsole
+Model: sandbox
+Net:   eth0: eth@10002000, eth5: eth@10003000
+Error: sbe5 address not set.
+, eth6: eth@10004000, eth8: phy-test-eth, eth4: dsa-test-eth, eth2: lan0, eth7: lan1
+Hit any key to stop autoboot:  0 
+=> /spl/u-boot-spl
+
+U-Boot SPL 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:20:06 +0000)
+Creating new bloblist size 400 at c000
+Finished bloblist size 400 at c000
+Finished bloblist size 400 at c000
+Found existing bloblist size 400 at c000
+
+
+U-Boot 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:20:06 +0000)
+
+Model: sandbox
+DRAM:  256 MiB
+Core:  219 devices, 82 uclasses, devicetree: board
+MMC:   mmc2: 2 (SD), mmc1: 1 (SD), mmc0: 0 (SD)
+Loading Environment from nowhere... OK
+In:    cros-ec-keyb
+Out:   vidconsole
+Err:   vidconsole
+Model: sandbox
+Net:   eth0: eth@10002000, eth5: eth@10003000
+Error: sbe5 address not set.
+, eth6: eth@10004000, eth8: phy-test-eth, eth4: dsa-test-eth, eth2: lan0, eth7: lan1
+Hit any key to stop autoboot:  0 
+=> 
+============================================= short test summary info =============================================
+FAILED test/py/tests/test_spl.py::test_spl[ut_spl_spl_test_load] - AssertionError: assert 'Failures: 0' in '\nU-...
+============================= 1 failed, 9 passed, 2 skipped, 945 deselected in 28.66s =============================
+
+sandbox_flattree: +make O=/home/uboot/u-boot/build-sandbox_flattree -s sandbox_flattree_defconfig
++make O=/home/uboot/u-boot/build-sandbox_flattree -s -j8
+/home/uboot/u-boot/build-sandbox_flattree/../scripts/dtc/pylibfdt/setup.py:21: DeprecationWarning: The distutils package is deprecated and slated for removal in Python 3.12. Use setuptools or check PEP 632 for potential alternatives
+  from distutils.core import setup, Extension
+In file included from ../include/linux/bitops.h:22,
+                 from ../include/log.h:15,
+                 from ../include/linux/printk.h:4,
+                 from ../include/common.h:20,
+                 from ../test/dm/k210_pll.c:6:
+../test/dm/k210_pll.c: In function ‘dm_test_k210_pll_calc_config’:
+../include/linux/bitops.h:11:38: warning: left shift count >= width of type [-Wshift-count-overflow]
+   11 | #define BIT(nr)                 (1UL << (nr))
+      |                                      ^~
+../include/linux/kernel.h:162:37: note: in definition of macro ‘abs’
+  162 |                         long __x = (x);                         \
+      |                                     ^
+../test/dm/k210_pll.c:36:54: note: in expansion of macro ‘BIT’
+   36 |                                 error = abs((error - BIT(32))) >> 16;
+      |                                                      ^~~
+../include/linux/bitops.h:11:38: warning: left shift count >= width of type [-Wshift-count-overflow]
+   11 | #define BIT(nr)                 (1UL << (nr))
+      |                                      ^~
+../include/linux/kernel.h:165:36: note: in definition of macro ‘abs’
+  165 |                         int __x = (x);                          \
+      |                                    ^
+../test/dm/k210_pll.c:36:54: note: in expansion of macro ‘BIT’
+   36 |                                 error = abs((error - BIT(32))) >> 16;
+      |                                                      ^~~
+/usr/bin/ld: warning: keep-syms-lto.o uses 2-byte wchar_t yet the output is to use 4-byte wchar_t; use of wchar_t values across objects may fail
+=============================================== test session starts ===============================================
+platform linux -- Python 3.10.6, pytest-6.2.5, py-1.10.0, pluggy-0.13.0
+rootdir: /home/uboot/u-boot/test/py, configfile: pytest.ini
+plugins: xdist-2.5.0, forked-1.4.0
+collected 951 items / 376 deselected / 575 selected                                                               
+
+test/py/tests/test_ut.py .................................................................................. [ 14%]
+........................................................................................................F.. [ 32%]
+.................................................F......................................................... [ 51%]
+......................F.................................................................................... [ 70%]
+........................................................................................................... [ 88%]
+..............F...F...FFF........................................                                           [100%]
+
+==================================================== FAILURES =====================================================
+________________________________________ test_ut[ut_dm_dm_test_dma_offset] ________________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   AssertionError: assert False
+E    +  where False = <built-in method endswith of str object at 0x3e049598>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x3e049598> = 'Test: dm_test_dma_offset: core.c (flat tree)\r\r\ntest/dm/core.c:1235, dm_test_dma_offset(): -0x10000000ULL == dev->d...ffffffff0000000 (-268435456), got 0xf0000000 (4026531840)\r\r\nTest dm_test_dma_offset failed 1 times\r\r\nFailures: 1'.endswith
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut dm dm_test_dma_offset
+Test: dm_test_dma_offset: core.c (flat tree)
+test/dm/core.c:1235, dm_test_dma_offset(): -0x10000000ULL == dev->dma_offset: Expected 0xfffffffff0000000 (-268435456), got 0xf0000000 (4026531840)
+Test dm_test_dma_offset failed 1 times
+Failures: 1
+=> 
+_________________________________________ test_ut[ut_dm_dm_test_k210_pll] _________________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   AssertionError: assert False
+E    +  where False = <built-in method endswith of str object at 0x3df77210>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x3df77210> = 'Test: dm_test_k210_pll: k210_pll.c (flat tree)\r\r\ntest/dm/k210_pll.c:82, dm_test_k210_pll(): 0 == dm_test_k210_pll_compare(&ours, &theirs): Expected 0x0 (0), got 0x1 (1)\r\r\nTest dm_test_k210_pll failed 1 times\r\r\nFailures: 1'.endswith
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut dm dm_test_k210_pll
+Test: dm_test_k210_pll: k210_pll.c (flat tree)
+test/dm/k210_pll.c:82, dm_test_k210_pll(): 0 == dm_test_k210_pll_compare(&ours, &theirs): Expected 0x0 (0), got 0x1 (1)
+Test dm_test_k210_pll failed 1 times
+Failures: 1
+=> 
+__________________________________________ test_ut[ut_dm_dm_test_pci_ea] __________________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   AssertionError: assert False
+E    +  where False = <built-in method endswith of str object at 0x3e55c5f0>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x3e55c5f0> = 'Test: dm_test_pci_ea: pci.c (flat tree)\r\r\nmap_physmem: Warning: partial map at 100000, wanted 4, got 0\r\r\nmap_ph...== *(u32 *)bar: Expected 0x74747474 (1953789044), got 0x0 (0)\r\r\nTest dm_test_pci_ea failed 1 times\r\r\nFailures: 1'.endswith
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut dm dm_test_pci_ea
+Test: dm_test_pci_ea: pci.c (flat tree)
+map_physmem: Warning: partial map at 100000, wanted 4, got 0
+map_physmem: Warning: partial map at 110000, wanted ff, got 0
+map_physmem: Warning: partial map at 110000, wanted ff, got 0
+map_physmem: Warning: partial map at 120000, wanted ffff, got 0
+test/dm/pci.c:293, dm_test_pci_ea(): PCI_EA_BAR4_MAGIC == *(u32 *)bar: Expected 0x74747474 (1953789044), got 0x0 (0)
+Test dm_test_pci_ea failed 1 times
+Failures: 1
+=> 
+_____________________________________ test_ut[ut_print_print_display_buffer] ______________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   assert False
+E    +  where False = <built-in method endswith of str object at 0x408134c8>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x408134c8> = 'Test: print_display_buffer: print_ut.c\r\r\n00000000: 00 11 22 33 44 55 66 77 88 99 aa bb cc dd ee ff  .."3DUfw.........: 0000000000000000 0000000000000088  .....7_?.M......\'\r\r\nTest print_display_buffer failed 1 times\r\r\nFailures: 1'.endswith
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut print print_display_buffer
+Test: print_display_buffer: print_ut.c
+00000000: 00 11 22 33 44 55 66 77 88 99 aa bb cc dd ee ff  .."3DUfw........
+00000010: 10 00                                            ..
+00000000: 00 11 22 33 44 55 66 77  .."3DUfw
+00000008: 88 99 aa bb cc dd ee ff  ........
+00000010: 10 00                    ..
+00000000: 00 11 22 33 44 55 66 77 88 99 aa bb cc dd ee ff 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  .."3DUfw........................................................
+00000040: 00 41                                                                                                                                                                                            .A
+12345678: 00 11 22 33 44 55 66 77 88 99 aa bb cc dd ee ff  .."3DUfw........
+12345688: 10 00                                            ..
+00000000: 1100 3322 5544 7766 9988 bbaa ddcc ffee  .."3DUfw........
+00000010: 0010                                     ..
+00000000: 33221100 77665544 bbaa9988 ffeeddcc  .."3DUfw........
+00000010: 00000010                             ....
+00000000: 0000000000000000 0000000000000088  .....7_?.M......
+00000010: 0000000000000010                   .....7_?
+test/print_ut.c:225, print_display_buffer(): console: 
+Expected '00000000: 7766554433221100 ffeeddccbbaa9988  .."3DUfw........',
+     got '00000000: 0000000000000000 0000000000000088  .....7_?.M......'
+Test print_display_buffer failed 1 times
+Failures: 1
+=> 
+______________________________________ test_ut[ut_print_print_hexdump_line] _______________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   AssertionError: assert False
+E    +  where False = <built-in method endswith of str object at 0x3e1f6c60>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x3e1f6c60> = 'Test: print_hexdump_line: print_ut.c\r\r\ntest/print_ut.c:262, print_hexdump_line(): -1 == linebuf[0]: Expected 0xffffffff (-1), got 0xff (255)\r\r\nTest print_hexdump_line failed 1 times\r\r\nFailures: 1'.endswith
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut print print_hexdump_line
+Test: print_hexdump_line: print_ut.c
+test/print_ut.c:262, print_hexdump_line(): -1 == linebuf[0]: Expected 0xffffffff (-1), got 0xff (255)
+Test print_hexdump_line failed 1 times
+Failures: 1
+=> 
+______________________________________ test_ut[ut_setexpr_setexpr_test_int] _______________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   assert False
+E    +  where False = <built-in method endswith of str object at 0x3ea94980>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x3ea94980> = 'Test: setexpr_test_int: setexpr.c\r\r\ntest/cmd/setexpr.c:55, setexpr_test_int(): "456789abcdef0123" = env_get("fred"): Expected "456789abcdef0123", got "cdef0123"\r\r\nTest setexpr_test_int failed 1 times\r\r\nFailures: 1'.endswith
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut setexpr setexpr_test_int
+Test: setexpr_test_int: setexpr.c
+test/cmd/setexpr.c:55, setexpr_test_int(): "456789abcdef0123" = env_get("fred"): Expected "456789abcdef0123", got "cdef0123"
+Test setexpr_test_int failed 1 times
+Failures: 1
+=> 
+______________________________________ test_ut[ut_setexpr_setexpr_test_oper] ______________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   assert False
+E    +  where False = <built-in method endswith of str object at 0x3e66abe8>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x3e66abe8> = 'Test: setexpr_test_oper: setexpr.c\r\r\ntest/cmd/setexpr.c:140, setexpr_test_oper(): "61ebfa800" = env_get("fred"): Expected "61ebfa800", got "1ebfa800"\r\r\nTest setexpr_test_oper failed 1 times\r\r\nFailures: 1'.endswith
+---------------------------------------------- Captured stdout setup ----------------------------------------------
+/u-boot
+Creating new bloblist size 400 at c000
+
+
+U-Boot 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:33:00 +0000)
+
+Model: sandbox
+DRAM:  256 MiB
+single-pinctrl pinctrl-single-no-width: missing register width
+Core:  224 devices, 85 uclasses, devicetree: board
+MMC:   mmc2: 2 (SD), mmc1: 1 (SD), mmc0: 0 (SD)
+Loading Environment from nowhere... OK
+In:    cros-ec-keyb
+Out:   vidconsole
+Err:   vidconsole
+Model: sandbox
+Net:   eth0: eth@10002000, eth5: eth@10003000, eth3: sbe5, eth6: eth@10004000, eth8: phy-test-eth, eth4: dsa-test-eth, eth2: lan0, eth7: lan1
+Hit any key to stop autoboot:  0 
+=> 
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut setexpr setexpr_test_oper
+Test: setexpr_test_oper: setexpr.c
+test/cmd/setexpr.c:140, setexpr_test_oper(): "61ebfa800" = env_get("fred"): Expected "61ebfa800", got "1ebfa800"
+Test setexpr_test_oper failed 1 times
+Failures: 1
+=> 
+______________________________________ test_ut[ut_setexpr_setexpr_test_plus] ______________________________________
+test/py/tests/test_ut.py:155: in test_ut
+    assert output.endswith('Failures: 0')
+E   assert False
+E    +  where False = <built-in method endswith of str object at 0x3df775f0>('Failures: 0')
+E    +    where <built-in method endswith of str object at 0x3df775f0> = 'Test: setexpr_test_plus: setexpr.c\r\r\ntest/cmd/setexpr.c:99, setexpr_test_plus(): "8eeebc2f407393a6" = env_get("fred"): Expected "8eeebc2f407393a6", got "407393a6"\r\r\nTest setexpr_test_plus failed 1 times\r\r\nFailures: 1'.endswith
+---------------------------------------------- Captured stdout setup ----------------------------------------------
+/u-boot
+Creating new bloblist size 400 at c000
+
+
+U-Boot 2022.10-00542-g9d5fbb644a (Oct 16 2022 - 20:33:00 +0000)
+
+Model: sandbox
+DRAM:  256 MiB
+single-pinctrl pinctrl-single-no-width: missing register width
+Core:  224 devices, 85 uclasses, devicetree: board
+MMC:   mmc2: 2 (SD), mmc1: 1 (SD), mmc0: 0 (SD)
+Loading Environment from nowhere... OK
+In:    cros-ec-keyb
+Out:   vidconsole
+Err:   vidconsole
+Model: sandbox
+Net:   eth0: eth@10002000, eth5: eth@10003000, eth3: sbe5, eth6: eth@10004000, eth8: phy-test-eth, eth4: dsa-test-eth, eth2: lan0, eth7: lan1
+Hit any key to stop autoboot:  0 
+=> 
+---------------------------------------------- Captured stdout call -----------------------------------------------
+=> ut setexpr setexpr_test_plus
+Test: setexpr_test_plus: setexpr.c
+test/cmd/setexpr.c:99, setexpr_test_plus(): "8eeebc2f407393a6" = env_get("fred"): Expected "8eeebc2f407393a6", got "407393a6"
+Test setexpr_test_plus failed 1 times
+Failures: 1
+=> 
+============================================= short test summary info =============================================
+FAILED test/py/tests/test_ut.py::test_ut[ut_dm_dm_test_dma_offset] - AssertionError: assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_dm_dm_test_k210_pll] - AssertionError: assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_dm_dm_test_pci_ea] - AssertionError: assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_print_print_display_buffer] - assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_print_print_hexdump_line] - AssertionError: assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_setexpr_setexpr_test_int] - assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_setexpr_setexpr_test_oper] - assert False
+FAILED test/py/tests/test_ut.py::test_ut[ut_setexpr_setexpr_test_plus] - assert False
+============================ 8 failed, 567 passed, 376 deselected in 110.52s (0:01:50) ============================
+binman: ======================== Running binman tests ========================
+..............................E..EFEgcc: error: unrecognized command-line option ‘-m32’; did you mean ‘-mbe32’?
+EEE.gcc: error: unrecognized command-line option ‘-m32’; did you mean ‘-mbe32’?
+E.EEFEE.E.E.E.....................E....gcc: error: unrecognized command-line option ‘-m32’; did you mean ‘-mbe32’?
+Es.sss..........s.
+======================================================================
+ERROR: setUpClass (binman.ftest.TestFunctional)
+----------------------------------------------------------------------
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/binmant.i7saynec/elftest/u_boot_ucode_ptr'
+
+Stdout:
+Error 2 running 'make -C /tmp/binmant.i7saynec/elftest -f /home/uboot/u-boot/tools/binman/test/Makefile SRC=/home/uboot/u-boot/tools/binman/test/': /home/uboot/u-boot/tools/binman/test/Makefile:14: *** Binman tests need to compile to x86, but the CPU arch of your machine is armv7l. Set CROSS_COMPILE to a suitable cross compiler.  Stop.
+
+
+======================================================================
+ERROR: testAllSymbols (binman.elf_test.TestElf)
+Test that we can obtain a symbol from the ELF file
+----------------------------------------------------------------------
+ValueError: Error 1 running 'objdump -t /tmp/elf.f70b0kla/u_boot_ucode_ptr': objdump: '/tmp/elf.f70b0kla/u_boot_ucode_ptr': No such file
+
+
+======================================================================
+ERROR: testDebug (binman.elf_test.TestElf)
+Check that enabling debug in the elf module produced debug output
+----------------------------------------------------------------------
+ValueError: Error 1 running 'objdump -t /tmp/elf.f70b0kla/u_boot_binman_syms': objdump: '/tmp/elf.f70b0kla/u_boot_binman_syms': No such file
+
+
+======================================================================
+ERROR: testDecodeElf (binman.elf_test.TestElf)
+Test for the MakeElf function
+----------------------------------------------------------------------
+Exception: Error running 'gcc -static -nostdlib -Wl,--build-id=none -m32 -T /tmp/binman.elf.tvvf2e12/elf.lds -o /tmp/elf.8e8agux7/elf /tmp/binman.elf.tvvf2e12/elf.S'
+
+======================================================================
+ERROR: testEmbedData (binman.elf_test.TestElf)
+Test for the GetSymbolFileOffset() function
+----------------------------------------------------------------------
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/elf.f70b0kla/embed_data'
+
+======================================================================
+ERROR: testEmbedDataNoSym (binman.elf_test.TestElf)
+Test for GetSymbolFileOffset() getting no symbols
+----------------------------------------------------------------------
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/elf.f70b0kla/embed_data'
+
+======================================================================
+ERROR: testMakeElf (binman.elf_test.TestElf)
+Test for the MakeElf function
+----------------------------------------------------------------------
+Exception: Error running 'gcc -static -nostdlib -Wl,--build-id=none -m32 -T /tmp/binman.elf.sblp81fq/elf.lds -o /tmp/elf.9hcj0lp5/elf /tmp/binman.elf.sblp81fq/elf.S'
+
+======================================================================
+ERROR: testMissingImageStart (binman.elf_test.TestElf)
+Test that we detect a missing __image_copy_start symbol
+----------------------------------------------------------------------
+ValueError: Error 1 running 'objdump -t /tmp/elf.f70b0kla/u_boot_binman_syms_bad': objdump: '/tmp/elf.f70b0kla/u_boot_binman_syms_bad': No such file
+
+
+======================================================================
+ERROR: testNoValue (binman.elf_test.TestElf)
+Test the case where we have no value for the symbol
+----------------------------------------------------------------------
+ValueError: Error 1 running 'objdump -t /tmp/elf.f70b0kla/u_boot_binman_syms': objdump: '/tmp/elf.f70b0kla/u_boot_binman_syms': No such file
+
+
+======================================================================
+ERROR: testRegexSymbols (binman.elf_test.TestElf)
+Test that we can obtain from the ELF file by regular expression
+----------------------------------------------------------------------
+ValueError: Error 1 running 'objdump -t /tmp/elf.f70b0kla/u_boot_ucode_ptr': objdump: '/tmp/elf.f70b0kla/u_boot_ucode_ptr': No such file
+
+
+======================================================================
+ERROR: test_get_file_offset (binman.elf_test.TestElf)
+Test GetFileOffset() gives the correct file offset for a symbol
+----------------------------------------------------------------------
+ValueError: Error 1 running 'objdump -t /tmp/elf.f70b0kla/embed_data': objdump: '/tmp/elf.f70b0kla/embed_data': No such file
+
+
+======================================================================
+ERROR: test_get_symbol_from_address (binman.elf_test.TestElf)
+Test GetSymbolFromAddress()
+----------------------------------------------------------------------
+ValueError: Error 1 running 'objdump -t /tmp/elf.f70b0kla/elf_sections': objdump: '/tmp/elf.f70b0kla/elf_sections': No such file
+
+
+======================================================================
+ERROR: test_read_loadable_segments (binman.elf_test.TestElf)
+Test for read_loadable_segments()
+----------------------------------------------------------------------
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/elf.f70b0kla/embed_data'
+
+======================================================================
+ERROR: test_read_segments_fail (binman.elf_test.TestElf)
+Test for read_loadable_segments() without elftools
+----------------------------------------------------------------------
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/elf.f70b0kla/embed_data'
+
+======================================================================
+ERROR: test_cbfs_offset (binman.cbfs_util_test.TestCbfs)
+Test a CBFS with files at particular offsets
+----------------------------------------------------------------------
+OverflowError: cannot fit 'int' into an index-sized integer
+
+======================================================================
+ERROR: test_cbfs_stage (binman.cbfs_util_test.TestCbfs)
+Tests handling of a Coreboot Filesystem (CBFS)
+----------------------------------------------------------------------
+Exception: Error running 'gcc -static -nostdlib -Wl,--build-id=none -m32 -T /tmp/binman.elf.xh2x5aaj/elf.lds -o /tmp/cbfs_util.dewexmwa/cbfs-stage.elf /tmp/binman.elf.xh2x5aaj/elf.S'
+
+======================================================================
+FAIL: testBadSymbolSize (binman.elf_test.TestElf)
+Test that an attempt to use an 8-bit symbol are detected
+----------------------------------------------------------------------
+AssertionError: 'has size 1: only 4 and 8 are supported' not found in "Error 1 running 'objdump -t /tmp/elf.f70b0kla/u_boot_binman_syms_size': objdump: '/tmp/elf.f70b0kla/u_boot_binman_syms_size': No such file\n"
+
+======================================================================
+FAIL: testOutsideFile (binman.elf_test.TestElf)
+Test a symbol which extends outside the entry area is detected
+----------------------------------------------------------------------
+AssertionError: 'entry_path has offset 8 (size 8) but the contents size is a' not found in "Error 1 running 'objdump -t /tmp/elf.f70b0kla/u_boot_binman_syms': objdump: '/tmp/elf.f70b0kla/u_boot_binman_syms': No such file\n"
+
+======================================================================
+SKIP: test_cbfstool_failure (binman.cbfs_util_test.TestCbfs)
+Test failure to run cbfstool
+----------------------------------------------------------------------
+No cbfstool available
+
+======================================================================
+SKIP: test_fiptool_create (binman.fip_util_test.TestFip)
+Create a FIP with fiptool and check that fip_util can read it
+----------------------------------------------------------------------
+No fiptool available
+
+======================================================================
+SKIP: test_fiptool_errors (binman.fip_util_test.TestFip)
+Check some error reporting from fiptool
+----------------------------------------------------------------------
+No fiptool available
+
+======================================================================
+SKIP: test_fiptool_list (binman.fip_util_test.TestFip)
+Create a FIP and check that fiptool can read it
+----------------------------------------------------------------------
+No fiptool available
+
+======================================================================
+SKIP: test_reader_get_entry (binman.fip_util_test.TestFip)
+Test get_entry() by name and UUID
+----------------------------------------------------------------------
+No fiptool available
+
+----------------------------------------------------------------------
+Ran 96 tests in 6.066s
+
+FAILED (failures=2, errors=16, skipped=5)
+
+patman: ======================== Running patman tests ========================
+======================================================================
+ERROR: test_create_branch (patman.func_test.TestFunctional)
+Test operation of create_branch()
+----------------------------------------------------------------------
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+======================================================================
+ERROR: test_find_new_responses (patman.func_test.TestFunctional)
+Test operation of find_new_responses()
+----------------------------------------------------------------------
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+======================================================================
+ERROR: test_review_snippets (patman.func_test.TestFunctional)
+Test showing of review snippets
+----------------------------------------------------------------------
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+======================================================================
+ERROR: test_self_test (patman.func_test.TestFunctional)
+Test a tested by tag by this user
+----------------------------------------------------------------------
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+======================================================================
+ERROR: test_tags (patman.func_test.TestFunctional)
+Test collection of tags in a patchstream
+----------------------------------------------------------------------
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+======================================================================
+FAIL: email_patches (gitutil)
+Doctest: gitutil.email_patches
+----------------------------------------------------------------------
+AssertionError: Failed doctest test for gitutil.email_patches
+  File "/home/uboot/u-boot/tools/patman/gitutil.py", line 421, in email_patches
+
+----------------------------------------------------------------------
+File "/home/uboot/u-boot/tools/patman/gitutil.py", line 461, in gitutil.email_patches
+Failed example:
+    email_patches(series, 'cover', ['p1', 'p2'], True, True, 'cc-fname',             True, alias)
+Exception raised:
+    AttributeError: 'NoneType' object has no attribute 'strip'
+
+
+----------------------------------------------------------------------
+Ran 44 tests in 43.197s
+
+FAILED (failures=1, errors=5)
+
+buildman: ======================= Running buildman tests =======================
+======================================================================
+ERROR: testToolchainDownload (buildman.test.TestBuild)
+Test that we can download toolchains
+----------------------------------------------------------------------
+urllib.error.HTTPError: HTTP Error 404: Not Found
+
+======================================================================
+FAIL: email_patches (patman.gitutil)
+Doctest: patman.gitutil.email_patches
+----------------------------------------------------------------------
+AssertionError: Failed doctest test for patman.gitutil.email_patches
+  File "/home/uboot/u-boot/tools/buildman/../patman/gitutil.py", line 421, in email_patches
+
+----------------------------------------------------------------------
+File "/home/uboot/u-boot/tools/buildman/../patman/gitutil.py", line 461, in patman.gitutil.email_patches
+Failed example:
+    email_patches(series, 'cover', ['p1', 'p2'], True, True, 'cc-fname',             True, alias)
+Exception raised:
+    AttributeError: 'NoneType' object has no attribute 'strip'
+
+
+----------------------------------------------------------------------
+Ran 50 tests in 46.166s
+
+FAILED (failures=1, errors=1)
+
+fdt: ======================= Running test_fdt tests =======================
+======================================================================
+ERROR: test_add_more (__main__.TestProp)
+Test various other methods for adding and setting properties
+----------------------------------------------------------------------
+SystemError: PY_SSIZE_T_CLEAN macro must be defined for '#' formats
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/uboot/u-boot/./tools/dtoc/test_fdt", line 513, in test_add_more
+    data = self.fdt.getprop(self.node.Offset(), 'one')
+  File "/home/uboot/u-boot/tools/dtoc/../../build-sandbox_spl/scripts/dtc/pylibfdt/libfdt.py", line 451, in getprop
+    pdata = check_err_null(fdt_getprop(self._fdt, nodeoffset, prop_name),
+  File "/home/uboot/u-boot/tools/dtoc/../../build-sandbox_spl/scripts/dtc/pylibfdt/libfdt.py", line 1269, in fdt_getprop
+    return _libfdt.fdt_getprop(fdt, nodeoffset, name)
+SystemError: <built-in function fdt_getprop> returned a result with an exception set
+
+======================================================================
+ERROR: test_make_prop (__main__.TestProp)
+Test we can convert all the the types that are supported
+----------------------------------------------------------------------
+SystemError: PY_SSIZE_T_CLEAN macro must be defined for '#' formats
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/uboot/u-boot/./tools/dtoc/test_fdt", line 351, in test_make_prop
+    prop = self._convert_prop('boolval')
+  File "/home/uboot/u-boot/./tools/dtoc/test_fdt", line 346, in _convert_prop
+    prop = self.fdt.getprop(self.node.Offset(), prop_name)
+  File "/home/uboot/u-boot/tools/dtoc/../../build-sandbox_spl/scripts/dtc/pylibfdt/libfdt.py", line 451, in getprop
+    pdata = check_err_null(fdt_getprop(self._fdt, nodeoffset, prop_name),
+  File "/home/uboot/u-boot/tools/dtoc/../../build-sandbox_spl/scripts/dtc/pylibfdt/libfdt.py", line 1269, in fdt_getprop
+    return _libfdt.fdt_getprop(fdt, nodeoffset, name)
+SystemError: <built-in function fdt_getprop> returned a result with an exception set
+
+======================================================================
+ERROR: test_string_list (__main__.TestProp)
+Test adding string-list property to a node
+----------------------------------------------------------------------
+SystemError: PY_SSIZE_T_CLEAN macro must be defined for '#' formats
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/uboot/u-boot/./tools/dtoc/test_fdt", line 566, in test_string_list
+    data = self.fdt.getprop(self.node.Offset(), 'stringlist')
+  File "/home/uboot/u-boot/tools/dtoc/../../build-sandbox_spl/scripts/dtc/pylibfdt/libfdt.py", line 451, in getprop
+    pdata = check_err_null(fdt_getprop(self._fdt, nodeoffset, prop_name),
+  File "/home/uboot/u-boot/tools/dtoc/../../build-sandbox_spl/scripts/dtc/pylibfdt/libfdt.py", line 1269, in fdt_getprop
+    return _libfdt.fdt_getprop(fdt, nodeoffset, name)
+SystemError: <built-in function fdt_getprop> returned a result with an exception set
+
+----------------------------------------------------------------------
+Ran 50 tests in 19.315s
+
+FAILED (errors=3)
+
+dtoc: ========================= Running dtoc tests =========================
+..............................................................
+----------------------------------------------------------------------
+Ran 62 tests in 99.812s
+
+OK
+
+binman code coverage: sh: 1: python3-coverage: not found
+FileNotFoundError: [Errno 2] No such file or directory: 'python3-coverage'
+
+During handling of the above exception, another exception occurred:
+
+Exception: Error running 'python3-coverage report': <class 'str'>
+dtoc code coverage: sh: 1: python3-coverage: not found
+Traceback (most recent call last):
+  File "/home/uboot/u-boot/tools/dtoc/../patman/command.py", line 95, in run_pipe
+    last_pipe = cros_subprocess.Popen(cmd, cwd=cwd, **kwargs)
+  File "/home/uboot/u-boot/tools/dtoc/../patman/cros_subprocess.py", line 83, in __init__
+    super(Popen, self).__init__(args, stdin=stdin,
+  File "/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'python3-coverage'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/uboot/u-boot/./tools/dtoc/dtoc", line 108, in <module>
+    RunTestCoverage()
+  File "/home/uboot/u-boot/./tools/dtoc/dtoc", line 67, in RunTestCoverage
+    test_util.run_test_coverage('tools/dtoc/dtoc', '/main.py',
+  File "/home/uboot/u-boot/tools/dtoc/../patman/test_util.py", line 65, in run_test_coverage
+    stdout = command.output('python3-coverage', 'report')
+  File "/home/uboot/u-boot/tools/dtoc/../patman/command.py", line 117, in output
+    return run_pipe([cmd], capture=True, **kwargs).stdout
+  File "/home/uboot/u-boot/tools/dtoc/../patman/command.py", line 99, in run_pipe
+    raise Exception("Error running '%s': %s" % (user_pipestr, str))
+Exception: Error running 'python3-coverage report': <class 'str'>
+fdt code coverage: sh: 1: python3-coverage: not found
+Traceback (most recent call last):
+  File "/home/uboot/u-boot/tools/dtoc/../patman/command.py", line 95, in run_pipe
+    last_pipe = cros_subprocess.Popen(cmd, cwd=cwd, **kwargs)
+  File "/home/uboot/u-boot/tools/dtoc/../patman/cros_subprocess.py", line 83, in __init__
+    super(Popen, self).__init__(args, stdin=stdin,
+  File "/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'python3-coverage'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/uboot/u-boot/./tools/dtoc/test_fdt", line 853, in <module>
+    sys.exit(main())
+  File "/home/uboot/u-boot/./tools/dtoc/test_fdt", line 849, in main
+    run_test_coverage(args.build_dir)
+  File "/home/uboot/u-boot/./tools/dtoc/test_fdt", line 805, in run_test_coverage
+    test_util.run_test_coverage('tools/dtoc/test_fdt.py', None,
+  File "/home/uboot/u-boot/tools/dtoc/../patman/test_util.py", line 65, in run_test_coverage
+    stdout = command.output('python3-coverage', 'report')
+  File "/home/uboot/u-boot/tools/dtoc/../patman/command.py", line 117, in output
+    return run_pipe([cmd], capture=True, **kwargs).stdout
+  File "/home/uboot/u-boot/tools/dtoc/../patman/command.py", line 99, in run_pipe
+    raise Exception("Error running '%s': %s" % (user_pipestr, str))
+Exception: Error running 'python3-coverage report': <class 'str'>
+Tests FAILED
+make: *** [Makefile:2373: tests] Error 1
+(env) uboot@633ffb52da05:~/u-boot$ ;115R;115R
